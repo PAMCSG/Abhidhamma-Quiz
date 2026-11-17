@@ -16,6 +16,8 @@
 
 .study-repeat{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 24px}.study-repeat .secondary{flex:none}
 .study-overview ol li,.study-overview ol li[aria-current=step]{padding:0;border:0;background:transparent}.study-jump{padding:9px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;color:var(--ink);background:#fff;text-align:left}.study-jump:hover{border-color:var(--green);background:#f5f9f4}.study-jump[aria-current=step]{border-color:var(--green);background:#e9f2eb;color:var(--deep)}
+.cetasika-reference-panel{width:min(1040px,100%)}.reference-heading{display:flex;justify-content:space-between;gap:16px;align-items:start}.reference-close{font:28px system-ui,sans-serif;line-height:1;border:1px solid #ccd8cb;border-radius:9px;background:#fff;color:var(--deep);width:40px;height:40px;flex:none}.reference-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.reference-tabs button{border:1px solid #bdcdbf;border-radius:9px;background:#fff;color:var(--deep);padding:10px 16px;font-weight:650}.reference-tabs button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.reference-scroll{padding-top:20px;padding-bottom:26px;overscroll-behavior:contain}.reference-scroll .study-table{table-layout:fixed}.reference-scroll .study-table th:first-child,.reference-scroll .study-table td:first-child{width:46px;color:var(--muted);font:13px system-ui,sans-serif}.reference-scroll .study-table td:nth-child(2){font:italic 19px 'Times New Roman',serif;color:#155CA8;overflow-wrap:anywhere}.reference-scroll .study-table td:nth-child(3),.reference-scroll .study-table td:nth-child(4){font:15px system-ui,sans-serif;color:var(--ink);overflow-wrap:anywhere}.reference-scroll .study-table th:nth-child(2){width:29%}.reference-scroll .study-table th:nth-child(3){width:37%}.reference-group{margin-bottom:30px}.reference-group h3{font:normal 25px Georgia,serif;margin:12px 0 5px;color:var(--deep)}.reference-parent{font-size:12px;letter-spacing:.4px;color:var(--muted);font-weight:650;margin:16px 0 8px}.reference-group .pali-title{margin-bottom:10px;font-size:20px}.reference-scroll .study-table-wrap{margin-top:12px}.reference-source{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px;margin-top:10px}@media(max-width:700px){.cetasika-reference-panel .resulthead{padding-top:18px;padding-bottom:16px}.cetasika-reference-panel .resulthead h2{font-size:27px}.reference-scroll{padding-left:12px;padding-right:12px}.reference-scroll .study-table{table-layout:auto;min-width:520px}.reference-scroll .study-table td:nth-child(2){font-size:18px}.reference-scroll .study-table td:nth-child(3),.reference-scroll .study-table td:nth-child(4){font-size:14px}.reference-group h3{font-size:22px}}
+
 </style>
 </head>
 <body>
@@ -44,7 +46,7 @@
   <div class="study-progress"><div class="topline"><span id="studyStageProgress"></span><span id="studyFactorProgress"></span></div><div class="track" role="progressbar" aria-label="Cetasikas recalled" aria-valuemin="0" aria-valuemax="52" id="studyProgress"><div class="fill" id="studyProgressFill"></div></div></div>
   <div id="studyStage"></div>
   <details class="study-overview" open><summary data-i18n="studyOutline">Revision sequence</summary><p class="study-help" data-i18n="studyJumpHelp">Choose a group to start it again from the beginning. Parent groups also restart their subgroups.</p><ol id="studyOutline"></ol></details>
-  <p class="study-source" data-i18n="studySource">Source: 2016 Abhidhamma Course at Pa-Auk Meditation Centre, Part 2 — Mental Factors, pp. 1–2. English names follow the notes; Chinese meanings are added for revision. Progress is saved on this browser when available.</p>
+  <p class="study-source" data-i18n="studySource">Source: Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020, pp. 2–3. English and Chinese terms follow the bilingual table. Progress is saved on this browser when available.</p>
   <p class="study-source hidden" id="studyStorageNotice" data-i18n="storageUnavailable">This browser cannot save progress. You can continue practising while this page stays open.</p>
 </section>
 <div class="modal hidden" id="rupaRevisionModal" role="dialog" aria-modal="true" aria-labelledby="rupaRevisionTitle"><div class="panel"><div class="resulthead"><div class="eyebrow">RŪPA</div><h2 id="rupaRevisionTitle" data-i18n="rupaTitle">Rūpa revision</h2></div><div class="review"><p data-i18n="rupaPending">Rūpa guided revision is coming next. We are starting with all 52 cetasikas.</p></div><div class="resultactions"><button type="button" class="secondary" id="closeRupa" data-i18n="closeRevision">Close</button></div></div></div>
@@ -53,6 +55,14 @@
 </main>
 <div class="modal hidden" id="resultModal" role="dialog" aria-modal="true" aria-labelledby="resultTitle"><div class="panel"><div class="resulthead"><div class="eyebrow" data-i18n="complete">Session complete</div><h2 id="resultTitle" data-i18n="results">Your results</h2><div class="score" id="score"></div><div id="feedback"></div></div><div class="review" id="review"></div><div class="resultactions"><button class="secondary" id="reviseAfter">📖 Revision notes</button><button class="secondary" id="closeReview">Back to start</button><button class="primary" id="retry">Try another quiz ↻</button></div></div></div>
 <div class="modal hidden" id="revisionModal" role="dialog" aria-modal="true" aria-labelledby="revisionTitle"><div class="panel"><div class="resulthead"><div class="eyebrow" id="revisionTag"></div><h2 id="revisionTitle">Revision notes</h2><p id="revisionIntro"></p></div><div class="review" id="revisionContent"></div><div class="resultactions"><button class="secondary" id="closeRevision">Close</button><button class="primary" id="revisionAction">Start Quiz →</button></div></div></div>
+<div class="modal hidden" id="cetasikaReferenceModal" role="dialog" aria-modal="true" aria-labelledby="cetasikaReferenceTitle">
+  <div class="panel cetasika-reference-panel">
+    <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="referenceTag">CETASIKA REVISION</div><h2 id="cetasikaReferenceTitle" data-i18n="referenceTitle">Revise the mental factors</h2></div><button type="button" class="reference-close" id="closeCetasikaReference" aria-label="Close revision">×</button></div><p data-i18n="referenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="referenceThisGroup" aria-pressed="true" data-i18n="referenceThisGroup">This group</button><button type="button" id="referenceAllGroups" aria-pressed="false" data-i18n="referenceAllGroups">All 52 cetasikas</button></nav></div>
+    <div class="review reference-scroll" id="cetasikaReferenceContent"></div>
+    <div class="resultactions"><button type="button" class="primary" id="returnFromCetasikaReference" data-i18n="referenceReturn">Return to practice</button></div>
+  </div>
+</div>
+
 <script>
 const bank=[
 ['How many cittas are counted in the basic classification?', ['52','89','121','54'],1,'The basic classification enumerates 89 cittas.','Citta'],
@@ -107,9 +117,9 @@ const chineseQuestions=[
 ['杂心所（pakiṇṇaka）共有多少种？','杂心所共有6种，并非每一种心都具备。'],
 ['不善心所（akusala cetasika）共有多少种？','不善心所共有14种。'],
 ['美心所（sobhana cetasika）共有多少种？','美心所共有25种。'],
-['遍一切美心心所（sobhanasādhāraṇa）共有多少种？','遍一切美心心所共有19种。'],
+['一切美心心所（sobhanasādhāraṇa）共有多少种？','一切美心心所共有19种。'],
 ['离心所（virati）共有多少种？','3种离心所分别是正语、正业和正命。'],
-['无量心所（appamaññā）列有多少种？','在这一心所分类中，2种无量心所为悲（karuṇā）与随喜（muditā）。'],
+['无量心所（appamaññā）列有多少种？','在这一心所分类中，2种无量心所为悲悯（karuṇā）与随喜（muditā）。'],
 ['慧根心所（paññindriya）有多少种？','慧根心所为1种，属于美心所。'],
 ['欲界美心（kāmāvacara sobhana citta）共有多少种？','欲界美心共有24种：8种善心、8种果报心和8种唯作心。'],
 ['大善心（mahākusala citta）共有多少种？','欲界大善心共有8种。'],
@@ -159,7 +169,7 @@ citta:[
 ['How many supramundane fruition cittas are there in the expanded system?','扩展分类中的出世间果心共有多少种？','20','Four fruitions multiplied by the five jhāna levels produce 20 fruition cittas.','四种果心各依五禅层次扩展，成为20种果心。']
 ],
 cetasika:[
-['How many ethically variable (aññasamāna) cetasikas are there?','同他心所（aññasamāna）共有多少种？','13','Seven universals and six occasionals together make 13 ethically variable factors.','7种遍一切心心所加6种杂心所，共13种同他心所。'],
+['How many ethically variable (aññasamāna) cetasikas are there?','通一切心所（aññasamāna）共有多少种？','13','Seven universals and six occasionals together make 13 ethically variable factors.','7种遍一切心心所加6种杂心所，共13种通一切心所。'],
 ['In how many cittas does vitakka (initial application) arise?','寻（vitakka）与多少种心相应？','55','The note counts 44 eligible sense-sphere cittas plus 11 first-jhāna cittas.','44种适用的欲界心加11种第一禅心，共55种。'],
 ['In how many cittas does vicāra (sustained application) arise?','伺（vicāra）与多少种心相应？','66','The note counts 44 sense-sphere, 11 first-jhāna and 11 second-jhāna cittas.','44种欲界心、11种第一禅心及11种第二禅心，共66种。'],
 ['In how many cittas does adhimokkha (decision) arise?','胜解（adhimokkha）与多少种心相应？','78','From 89 cittas exclude 10 sense consciousnesses and 1 doubt-associated citta.','从89心中减去10种双五识及1种疑相应心，得78种。'],
@@ -170,10 +180,10 @@ cetasika:[
 ['In how many unwholesome cittas does greed arise?','贪心所与多少种不善心相应？','8','Lobha arises in the eight greed-rooted cittas.','贪心所与全部8种贪根心相应。'],
 ['In how many greed-rooted cittas can wrong view arise?','邪见心所与多少种贪根心相应？','4','Wrong view arises in the four greed-rooted cittas associated with wrong view.','邪见与4种邪见相应的贪根心同生。'],
 ['In how many greed-rooted cittas can conceit arise?','慢心所可与多少种贪根心相应？','4','Conceit can arise in the four greed-rooted cittas dissociated from wrong view.','慢心所可生于4种不与邪见相应的贪根心。'],
-['In how many cittas can envy (issā) arise?','嫉（issā）可与多少种心相应？','2','Envy may arise with either hatred-rooted citta, but need not arise every time.','嫉可与两种瞋根心中的任一种相应，但并非每次都会生起。'],
+['In how many cittas can envy (issā) arise?','嫉妒（issā）可与多少种心相应？','2','Envy may arise with either hatred-rooted citta, but need not arise every time.','嫉妒可与两种嗔根心中的任一种相应，但并非每次都会生起。'],
 ['In how many prompted unwholesome cittas can sloth and torpor arise?','昏沉和睡眠可与多少种有行不善心相应？','5','Sloth and torpor arise together in five prompted unwholesome cittas.','昏沉和睡眠一起生起于5种有行不善心。'],
 ['In how many cittas does doubt (vicikicchā) arise?','疑（vicikicchā）与多少种心相应？','1','Doubt accompanies only the delusion-rooted citta associated with doubt.','疑仅与一种疑相应的痴根心同生。'],
-['In how many beautiful cittas do all 19 beautiful universals arise (89-citta system)?','在89心分类中，19种遍一切美心心所与多少种心相应？','59','All 19 beautiful universals arise in each of the 59 beautiful cittas.','19种遍一切美心心所都生于59种美心。'],
+['In how many beautiful cittas do all 19 beautiful universals arise (89-citta system)?','在89心分类中，19种一切美心心所与多少种心相应？','59','All 19 beautiful universals arise in each of the 59 beautiful cittas.','19种一切美心心所都生于59种美心。'],
 ['In how many cittas can the three abstinences arise according to the basic classification?','依基本分类，三离心所可与多少种心相应？','16','They arise in eight supramundane cittas together and occasionally, separately, in eight sense-sphere wholesome cittas.','三离心所在8种出世间心中一起生起，在8种欲界善心中则偶尔分别生起，共16种。'],
 ['In how many cittas can the two illimitables arise according to the main count in the note?','依讲义主要计算，两种无量心所可与多少种心相应？','28','The main count is 12 eligible fine-material plus 8 sense-sphere wholesome plus 8 sense-sphere functional cittas.','主要算法为12种适用色界心、8种欲界善心与8种欲界唯作心，共28种。'],
 ['What is the alternative count for the two illimitables mentioned in the note?','讲义提及两种无量心所的另一种相应心数是多少？','20','An alternative interpretation excludes equanimity-associated sense-sphere cittas, yielding 20.','另一说排除舍受相应的相关欲界心，得20种。'],
@@ -196,16 +206,16 @@ citta:{basic:[
 ['Classification by jhāna / 按禅那分类','For 121 cittas: 54 sense-sphere without jhāna, 11 at each of the first four jhāna levels, and 23 at the fifth.','121心：54欲界心不按禅那分类，第一至第四禅各11心，第五禅23心。']
 ]},
 cetasika:{basic:[
-['The 52 mental factors / 五十二心所','52 = 13 ethically variable + 14 unwholesome + 25 beautiful factors.','52心所＝13同他心所＋14不善心所＋25美心所。'],
+['The 52 mental factors / 五十二心所','52 = 13 ethically variable + 14 unwholesome + 25 beautiful factors.','52心所＝13通一切心所＋14不善心所＋25美心所。'],
 ['Universals / 遍一切心心所','Seven: phassa, vedanā, saññā, cetanā, ekaggatā, jīvitindriya, manasikāra. These arise with every citta.','7种：触、受、想、思、一境性、命根、作意；每种心都具备。'],
 ['Occasionals / 杂心所','Six: vitakka, vicāra, adhimokkha, vīriya, pīti, chanda. They arise only where appropriate.','6种：寻、伺、胜解、精进、喜、欲；并非每种心都具有。'],
 ['Unwholesome factors / 不善心所','14 in total, including four universals of unwholesomeness: moha, ahirika, anottappa and uddhacca.','不善心所共14种，其中痴、无惭、无愧、掉举遍于全部不善心。'],
-['Beautiful factors / 美心所','25 = 19 beautiful universals + 3 abstinences + 2 illimitables (compassion, appreciative joy) + 1 wisdom faculty.','25美心所＝19遍一切美心心所＋3离心所＋2无量心所（悲、随喜）＋1慧根。']
+['Beautiful factors / 美心所','25 = 19 beautiful universals + 3 abstinences + 2 illimitables (compassion, appreciative joy) + 1 wisdom faculty.','25美心所＝19一切美心心所＋3离心所＋2无量心所（悲悯、随喜）＋1慧根。']
 ],advanced:[
 ['Six occasional associations / 六杂心所相应','In the 89/121 system as counted in the notes: vitakka 55, vicāra 66, adhimokkha 78, vīriya 73, pīti 51, chanda 69 cittas.','依讲义统计：寻55、伺66、胜解78、精进73、喜51、欲69种相应心。'],
 ['Unwholesome associations / 不善心所相应','The four unwholesome universals arise in all 12 akusala cittas. Lobha is possible in 8, diṭṭhi in 4, māna in 4, and vicikicchā in 1.','4种遍一切不善心心所生于全部12不善心。贪与8心相应、邪见可与4心、慢可与4心、疑只与1心相应。'],
-['Hatred and prompted cittas / 瞋与有行心','Dosa, issā, macchariya and kukkucca relate to the two hatred-rooted cittas; sloth and torpor arise in the five prompted unwholesome cittas.','瞋、嫉、悭、恶作可与2种瞋根心相应；昏沉与睡眠生于5种有行不善心。'],
-['Beautiful associations / 美心所相应','The 19 beautiful universals occur in all 59 beautiful cittas (basic system); wisdom occurs in 47 cittas.','19种遍一切美心心所生于全部59美心；慧根与47种心相应。'],
+['Hatred and prompted cittas / 瞋与有行心','Dosa, issā, macchariya and kukkucca relate to the two hatred-rooted cittas; sloth and torpor arise in the five prompted unwholesome cittas.','嗔、嫉妒、悭吝、追悔可与2种嗔根心相应；昏沉与睡眠生于5种有行不善心。'],
+['Beautiful associations / 美心所相应','The 19 beautiful universals occur in all 59 beautiful cittas (basic system); wisdom occurs in 47 cittas.','19种一切美心心所生于全部59美心；慧根与47种心相应。'],
 ['Abstinences and illimitables / 离与无量','Three abstinences can arise in 16 cittas. Two illimitables can arise in 28 according to the main count; the notes also mention an alternative count of 20.','三离心所可与16种心相应；两无量心所主要计算为28种，讲义亦列另一说为20种。']
 ]}};
 let language=readLocal('abhidhammaQuizLanguage')==='zh'?'zh':'en';
@@ -216,21 +226,21 @@ const extraBasicCetasika=[
 ['Which cetasika means perception?','哪一种心所是「想」？','Saññā','Saññā means perception.','Saññā 即想。',['Saññā','Cetanā','Vitakka','Pīti']],
 ['Which cetasika means volition?','哪一种心所是「思」？','Cetanā','Cetanā means volition.','Cetanā 即思。',['Cetanā','Vīriya','Sati','Adosa']],
 ['Which cetasika means attention?','哪一种心所是「作意」？','Manasikāra','Manasikāra means attention.','Manasikāra 即作意。',['Manasikāra','Māna','Issā','Diṭṭhi']],
-['Which cetasika means mindfulness?','哪一种心所是「念」？','Sati','Sati means mindfulness and is a beautiful universal.','Sati 即念，属于遍一切美心心所。',['Sati','Moha','Dosa','Lobha']],
-['Which cetasika means compassion?','哪一种心所是「悲」？','Karuṇā','Karuṇā is compassion, one of the two illimitables.','Karuṇā 即悲，属于两无量心所之一。',['Karuṇā','Muditā','Chanda','Saññā']],
+['Which cetasika means mindfulness?','哪一种心所是「念」？','Sati','Sati means mindfulness and is a beautiful universal.','Sati 即念，属于一切美心心所。',['Sati','Moha','Dosa','Lobha']],
+['Which cetasika means compassion?','哪一种心所是「悲悯」？','Karuṇā','Karuṇā is compassion, one of the two illimitables.','Karuṇā 即悲悯，属于两无量心所之一。',['Karuṇā','Muditā','Chanda','Saññā']],
 ['Which cetasika means appreciative joy?','哪一种心所是「随喜」？','Muditā','Muditā is appreciative joy, one of the two illimitables.','Muditā 即随喜，属于两无量心所之一。',['Muditā','Karuṇā','Vedanā','Vitakka']],
 ['Which cetasika means greed?','哪一种心所是「贪」？','Lobha','Lobha means greed and belongs to the unwholesome factors.','Lobha 即贪，属于不善心所。',['Lobha','Alobha','Adosa','Sati']],
 ['Which cetasika means wisdom faculty?','哪一种心所是「慧根」？','Paññindriya','Paññindriya is the wisdom faculty.','Paññindriya 即慧根。',['Paññindriya','Vīriya','Pīti','Phassa']]
 ];
-function makeExtraBasic(){return extraBasicCetasika.map(a=>({prompt:a[0],translation:[a[1],a[4]],explanation:a[3],category:'Cetasika',choices:shuffle(a[5].map(text=>({text,correct:text===a[2]})))}));}
+function makeExtraBasic(){return extraBasicCetasika.map(a=>{const factor=cetasikaFactors.find(f=>f.pali===a[2]||f.paliAliases.includes(a[2]));return {prompt:`Which cetasika means “${factor.en}”?`,translation:[`哪一种心所是「${factor.zh}」？`,`${factor.pali} 即${factor.zh}。`],explanation:`${factor.pali} means ${factor.en}.`,category:'Cetasika',choices:shuffle(a[5].map(text=>({text,correct:text===a[2]})))};});}
 function basicPool(which){return bank.map((row,i)=>({row,i})).filter(({i})=>which==='cetasika'?[2,13,14,15,16,17,18,19,20,28].includes(i):![2,13,14,15,16,17,18,19,20,28].includes(i)).map(({row,i})=>{const [prompt,opts,correct,explanation,category]=row;return {prompt,choices:shuffle(opts.map((text,n)=>({text,correct:n===correct}))),explanation,category,translation:chineseQuestions[i]};}).concat(which==='cetasika'?makeExtraBasic():[]);}
 const $=id=>document.getElementById(id);
 document.querySelectorAll('[data-count]').forEach(btn=>btn.addEventListener('click',()=>{count=Number(btn.dataset.count);document.querySelectorAll('[data-count]').forEach(b=>{b.classList.toggle('selected',b===btn);b.setAttribute('aria-pressed',String(b===btn));});}));
 function shuffle(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];}return array;}
 function t(key){return translations[language][key];}
-function updateLanguage(){document.documentElement.lang=language==='zh'?'zh-Hans':'en';document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===language)));document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));document.querySelectorAll('[data-count]').forEach(el=>el.textContent=`${el.dataset.count} ${t('counts')}`);document.querySelectorAll('[data-topic]').forEach(el=>{const citta=el.dataset.topic==='citta';el.textContent=language==='zh'?(citta?'1 · 心（Citta）':'2 · 心所（Cetasika）'):(citta?'1 · Citta':'2 · Cetasika');});document.querySelectorAll('[data-level]').forEach(el=>el.textContent=t(el.dataset.level));$('start').textContent=t('start');$('previous').textContent=t('back');$('retry').textContent=t('retry');$('closeReview').textContent=t('close');$('reviseBefore').textContent=t('revise');$('reviseAfter').textContent=t('revise');if(questions.length){render();if(!$('resultModal').classList.contains('hidden'))finish();}if(!$('revisionModal').classList.contains('hidden'))renderRevision();if(!$('cetasikaRevision').classList.contains('hidden'))renderStudy();}
+function updateLanguage(){document.documentElement.lang=language==='zh'?'zh-Hans':'en';document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===language)));document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));document.querySelectorAll('[data-count]').forEach(el=>el.textContent=`${el.dataset.count} ${t('counts')}`);document.querySelectorAll('[data-topic]').forEach(el=>{const citta=el.dataset.topic==='citta';el.textContent=language==='zh'?(citta?'1 · 心（Citta）':'2 · 心所（Cetasika）'):(citta?'1 · Citta':'2 · Cetasika');});document.querySelectorAll('[data-level]').forEach(el=>el.textContent=t(el.dataset.level));$('start').textContent=t('start');$('previous').textContent=t('back');$('retry').textContent=t('retry');$('closeReview').textContent=t('close');$('reviseBefore').textContent=t('revise');$('reviseAfter').textContent=t('revise');if(questions.length){render();if(!$('resultModal').classList.contains('hidden'))finish();}if(!$('revisionModal').classList.contains('hidden'))renderRevision();if(!$('cetasikaRevision').classList.contains('hidden'))renderStudy();if(!$('cetasikaReferenceModal').classList.contains('hidden'))renderCetasikaReference();}
 function start(){const pool=level==='basic'?basicPool(topic):makeAdvanced(topic);questions=shuffle(pool).slice(0,count);answers=Array(questions.length).fill(null);index=0;$('revisionModal').classList.add('hidden');$('resultModal').classList.add('hidden');$('home').classList.add('hidden');$('quiz').classList.remove('hidden');render();window.scrollTo({top:0,behavior:'smooth'});}
-function renderRevision(){const revisionTopic=revisionTopicOverride||topic;const entries=revisionNotes[revisionTopic][level];$('revisionTag').textContent=`${revisionTopic==='citta'?(language==='zh'?'1 · 心（Citta）':'1 · Citta'):(language==='zh'?'2 · 心所（Cetasika）':'2 · Cetasika')} · ${t(level)}`;$('revisionTitle').textContent=t('revisionTitle');$('revisionIntro').textContent=t('revisionIntro');$('revisionContent').replaceChildren();entries.forEach(([title,en,zh])=>{const card=document.createElement('article');card.className='revision-card';const heading=document.createElement('h3');const [englishTitle,chineseTitle]=title.split(' / ');heading.textContent=language==='zh'?chineseTitle:englishTitle;const p=document.createElement('p');p.textContent=language==='zh'?zh:en;card.append(heading,p);$('revisionContent').append(card);});const source=document.createElement('p');source.className='revision-source';source.textContent=language==='zh'?(revisionTopic==='citta'?'资料来源：2016年阿毗达摩课程第一部分——心（Citta）。':'资料来源：2016年阿毗达摩课程第二部分——心所（Cetasika）。'):(revisionTopic==='citta'?'Source: 2016 Abhidhamma Course, Part 1 — Consciousness (Citta).':'Source: 2016 Abhidhamma Course, Part 2 — Mental Factors (Cetasika).');$('revisionContent').append(source);$('closeRevision').textContent=revisionFromResults?t('reviewAnswers'):t('closeRevision');$('revisionAction').textContent=revisionFromResults?t('retry'):t('startFromRevision');}
+function renderRevision(){const revisionTopic=revisionTopicOverride||topic;const entries=revisionNotes[revisionTopic][level];$('revisionTag').textContent=`${revisionTopic==='citta'?(language==='zh'?'1 · 心（Citta）':'1 · Citta'):(language==='zh'?'2 · 心所（Cetasika）':'2 · Cetasika')} · ${t(level)}`;$('revisionTitle').textContent=t('revisionTitle');$('revisionIntro').textContent=revisionTopic==='cetasika'?t('referenceSource'):t('revisionIntro');$('revisionContent').replaceChildren();entries.forEach(([title,en,zh])=>{const card=document.createElement('article');card.className='revision-card';const heading=document.createElement('h3');const [englishTitle,chineseTitle]=title.split(' / ');heading.textContent=language==='zh'?chineseTitle:englishTitle;const p=document.createElement('p');p.textContent=language==='zh'?zh:en;card.append(heading,p);$('revisionContent').append(card);});const source=document.createElement('p');source.className='revision-source';source.textContent=language==='zh'?(revisionTopic==='citta'?'资料来源：2016年阿毗达摩课程第一部分——心（Citta）。':'资料来源：Ven Sugatavaṃsa，2020年8月15日《Revision on Mental Factors (Cetasika)》。'):(revisionTopic==='citta'?'Source: 2016 Abhidhamma Course, Part 1 — Consciousness (Citta).':'Source: Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020.');$('revisionContent').append(source);$('closeRevision').textContent=revisionFromResults?t('reviewAnswers'):t('closeRevision');$('revisionAction').textContent=revisionFromResults?t('retry'):t('startFromRevision');}
 function showRevision(fromResults){revisionFromResults=fromResults;renderRevision();$('revisionModal').classList.remove('hidden');$('revisionContent').scrollTop=0;$('closeRevision').focus();}
 function render(){let q=questions[index];$('progressText').textContent=language==='zh'?`第 ${index+1} 题，共 ${count} 题`:`QUESTION ${index+1} OF ${count}`;$('answeredText').textContent=language==='zh'?`已回答 ${answers.filter(x=>x!==null).length} 题`:`${answers.filter(x=>x!==null).length} answered`;$('progressBar').style.width=`${(index+1)/count*100}%`;$('category').textContent=language==='zh'?(chineseCategories[q.category]||q.category):q.category;$('questionText').textContent=language==='zh'?q.translation[0]:q.prompt;$('choices').replaceChildren();q.choices.forEach((choice,i)=>{let b=document.createElement('button');b.className='choice'+(answers[index]===i?' active':'');b.type='button';b.setAttribute('aria-pressed',String(answers[index]===i));let letter=document.createElement('span');letter.className='letter';letter.textContent='ABCD'[i];let span=document.createElement('span');span.textContent=choice.text;b.append(letter,span);b.onclick=()=>{answers[index]=i;render();};$('choices').append(b);});$('previous').disabled=index===0;$('next').disabled=answers[index]===null;$('next').textContent=index===count-1?t('finish'):t('next');}
 function finish(){const correct=questions.filter((q,i)=>q.choices[answers[i]].correct).length;$('score').textContent=`${correct} / ${count}`;$('feedback').textContent=correct===count?t('excellent'):correct/count>=.7?t('good'):t('practice');$('review').replaceChildren();questions.forEach((q,i)=>{let picked=q.choices[answers[i]],right=q.choices.find(c=>c.correct),item=document.createElement('div');item.className='reviewitem';let status=document.createElement('strong');status.className=picked.correct?'right':'wrong';status.textContent=`${i+1}. ${picked.correct?t('correct'):t('wrong')}`;let title=document.createElement('h3');title.textContent=language==='zh'?q.translation[0]:q.prompt;let a=document.createElement('p');a.textContent=`${t('your')} ${picked.text}`;let c=document.createElement('p');c.className='right';c.textContent=`${t('answer')} ${right.text}`;let e=document.createElement('p');e.className='explanation';e.textContent=language==='zh'?q.translation[1]:q.explanation;item.append(status,title,a,c,e);$('review').append(item);});$('resultModal').classList.remove('hidden');$('review').scrollTop=0;$('retry').focus();}
@@ -244,80 +254,699 @@ $('revisionAction').onclick=()=>{if(revisionTopicOverride){topic=revisionTopicOv
 updateLanguage();
 syncTitle();
 $('start').onclick=start;$('previous').onclick=()=>{if(index>0){index--;render();}};$('next').onclick=()=>{if(answers[index]===null)return;if(index<count-1){index++;render();}else finish();};$('retry').onclick=start;$('closeReview').onclick=()=>{$('resultModal').classList.add('hidden');$('quiz').classList.add('hidden');$('home').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});};
-// One source of truth for the 52 factors. Pāli spellings normalize obvious
-// typesetting errors in the handout (e.g. sammā-kammanta, sammā-ājīva).
+// Canonical English and Chinese terms follow the bilingual table on pp. 2–3
+// of Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020.
+// Moral Fearlessness uses the complete spelling also present on p. 6.
 const cetasikaFactors=[
-['Phassa','Contact','触',[],['觸']],
-['Vedanā','Feeling','受',[],['feelings']],
-['Saññā','Perception','想',[],[]],
-['Cetanā','Volition','思',[],['intention']],
-['Ekaggatā','One-pointedness','一境性',[],['one pointedness of mind','mental one pointedness','心一境性']],
-['Jīvitindriya','Life faculty','命根',[],['mental life faculty']],
-['Manasikāra','Attention','作意',[],[]],
-['Vitakka','Initial application','寻',[],['applied thought','initial application of mind','尋']],
-['Vicāra','Sustained application','伺',[],['sustained thought','sustained application of mind']],
-['Adhimokkha','Decision','胜解',[],['resolution','determination','勝解']],
-['Vīriya','Energy','精进',[],['effort','精進']],
-['Pīti','Zest / Joy','喜',[],['zest','joy','rapture']],
-['Chanda','Desire','欲',[],['desire to act','zeal','欲心所']],
-['Moha / Avijjā','Delusion','痴',['Moha','Avijjā'],['ignorance','无明','無明','癡']],
-['Ahirika','Shamelessness','无惭',[],['lack of moral shame','無慚']],
-['Anottappa','Fearlessness of wrong','无愧',[],['fearlessness of wrongdoing','fearlessness of wrong doing','moral fearlessness','lack of moral dread','lack of moral fear','無愧']],
-['Uddhacca','Restlessness','掉举',[],['掉舉']],
-['Lobha','Greed','贪',[],['attachment','貪']],
-['Diṭṭhi','Wrong view','邪见',[],['wrong views','邪見']],
-['Māna','Conceit','慢',[],[]],
-['Dosa','Hatred','瞋',[],['aversion','anger','嗔']],
-['Issā','Envy','嫉',[],['jealousy','嫉妒']],
-['Macchariya','Avarice','悭',[],['stinginess','miserliness','慳']],
-['Kukkucca','Worry','恶作',[],['remorse','惡作','追悔']],
-['Thina','Sloth','昏沉',[],['惛沉']],
-['Middha','Torpor','睡眠',[],['drowsiness']],
-['Vicikicchā','Doubt','疑',[],[]],
-['Saddhā','Faith','信',[],['confidence']],
-['Sati','Mindfulness','念',[],['正念']],
-['Hirī','Shame','惭',[],['moral shame','慚']],
-['Ottappa','Fear of wrong','愧',[],['fear of wrongdoing','fear of wrong doing','moral dread','moral fear']],
-['Alobha','Non-greed','无贪',[],['non attachment','無貪']],
-['Adosa','Non-hatred','无瞋',[],['non aversion','無瞋','无嗔','無嗔']],
-['Tatramajjhattatā','Neutrality of mind','中舍性',[],['equanimity','mental neutrality']],
-['Kāya-passaddhi','Tranquility of mental body','身轻安',[],['tranquillity of mental body','tranquility of the mental body','tranquillity of the mental body','tranquility of mental factors','tranquillity of mental factors','身輕安']],
-['Citta-passaddhi','Tranquility of consciousness','心轻安',[],['tranquillity of consciousness','tranquility of mind','tranquillity of mind','心輕安']],
-['Kāya-lahutā','Lightness of mental body','身轻快性',[],['lightness of the mental body','lightness of mental factors','身輕快性']],
-['Citta-lahutā','Lightness of consciousness','心轻快性',[],['lightness of mind','心輕快性']],
-['Kāya-mudutā','Malleability of mental body','身柔软性',[],['malleability of the mental body','malleability of mental factors','pliancy of mental body','身柔軟性']],
-['Citta-mudutā','Malleability of consciousness','心柔软性',[],['malleability of mind','pliancy of consciousness','心柔軟性']],
-['Kāya-kammaññatā','Wieldiness of mental body','身适业性',[],['wieldiness of the mental body','wieldiness of mental factors','workability of mental body','身適業性']],
-['Citta-kammaññatā','Wieldiness of consciousness','心适业性',[],['wieldiness of mind','workability of consciousness','心適業性']],
-['Kāya-pāguññatā','Proficiency of mental body','身练达性',[],['proficiency of the mental body','proficiency of mental factors','身練達性']],
-['Citta-pāguññatā','Proficiency of consciousness','心练达性',[],['proficiency of mind','心練達性']],
-['Kāyujjukatā','Rectitude of mental body','身正直性',['Kāya-ujukatā'],['rectitude of the mental body','rectitude of mental factors','uprightness of mental body']],
-['Cittujjukatā','Rectitude of consciousness','心正直性',['Citta-ujukatā'],['rectitude of mind','uprightness of consciousness']],
-['Sammā-vācā','Right speech','正语',[],['正語']],
-['Sammā-kammanta','Right action','正业',[],['正業']],
-['Sammā-ājīva','Right livelihood','正命',[],[]],
-['Karuṇā','Compassion','悲',[],['悲悯','悲憫']],
-['Muditā','Appreciative joy','随喜',[],['sympathetic joy','隨喜','喜无量','喜無量']],
-['Paññindriya','Wisdom faculty','慧根',['Paññā','Amoha'],['wisdom','non delusion','慧','无痴','無癡']]
+[
+"Phassa",
+"Contact",
+"触",
+[],
+[
+"觸",
+"Contact",
+"触"
+]
+],
+[
+"Vedanā",
+"Feeling",
+"受",
+[],
+[
+"feelings",
+"Feeling",
+"受"
+]
+],
+[
+"Saññā",
+"Perception",
+"想",
+[],
+[
+"Perception",
+"想"
+]
+],
+[
+"Cetanā",
+"Volition",
+"思",
+[],
+[
+"intention",
+"Volition",
+"思"
+]
+],
+[
+"Ekaggatā",
+"One-pointedness",
+"一境性",
+[],
+[
+"one pointedness of mind",
+"mental one pointedness",
+"心一境性",
+"One-pointedness",
+"一境性"
+]
+],
+[
+"Jīvitindriya",
+"Life faculty",
+"命根",
+[],
+[
+"mental life faculty",
+"Life faculty",
+"命根"
+]
+],
+[
+"Manasikāra",
+"Attention",
+"作意",
+[],
+[
+"Attention",
+"作意"
+]
+],
+[
+"Vitakka",
+"Initial application",
+"寻",
+[],
+[
+"applied thought",
+"initial application of mind",
+"尋",
+"Initial application",
+"寻"
+]
+],
+[
+"Vicāra",
+"Sustained application",
+"伺",
+[],
+[
+"sustained thought",
+"sustained application of mind",
+"Sustained application",
+"伺"
+]
+],
+[
+"Adhimokkha",
+"Decision",
+"勝解",
+[],
+[
+"resolution",
+"determination",
+"勝解",
+"Decision",
+"胜解"
+]
+],
+[
+"Vīriya",
+"Energy/effort",
+"精进",
+[],
+[
+"effort",
+"精進",
+"Energy",
+"精进"
+]
+],
+[
+"Pīti",
+"Rapture / Joy",
+"喜",
+[],
+[
+"zest",
+"joy",
+"rapture",
+"Zest / Joy",
+"喜",
+"Rapture ",
+" Joy"
+]
+],
+[
+"Chanda",
+"Desire",
+"欲",
+[],
+[
+"desire to act",
+"zeal",
+"欲心所",
+"Desire",
+"欲"
+]
+],
+[
+"Moha/Avijjā",
+"Delusion",
+"痴",
+[
+"Moha",
+"Avijjā"
+],
+[
+"ignorance",
+"无明",
+"無明",
+"癡",
+"Delusion",
+"痴"
+]
+],
+[
+"Ahirika",
+"Moral Shamelessness",
+"无惭",
+[],
+[
+"lack of moral shame",
+"無慚",
+"Shamelessness",
+"无惭",
+"Moral Shamelessness"
+]
+],
+[
+"Anottappa",
+"Moral Fearlessness",
+"无愧",
+[],
+[
+"fearlessness of wrongdoing",
+"fearlessness of wrong doing",
+"moral fearlessness",
+"lack of moral dread",
+"lack of moral fear",
+"無愧",
+"Fearlessness of wrong",
+"无愧",
+"Moral Fearlessnes"
+]
+],
+[
+"Uddhacca",
+"Restlessness",
+"掉举",
+[],
+[
+"掉舉",
+"Restlessness",
+"掉举"
+]
+],
+[
+"Lobha",
+"Greed",
+"贪",
+[],
+[
+"attachment",
+"貪",
+"Greed",
+"贪"
+]
+],
+[
+"Diṭṭhi",
+"Wrong view",
+"邪见",
+[],
+[
+"wrong views",
+"邪見",
+"Wrong view",
+"邪见"
+]
+],
+[
+"Māna",
+"Conceit",
+"慢",
+[],
+[
+"Conceit",
+"慢"
+]
+],
+[
+"Dosa",
+"Hatred",
+"嗔",
+[],
+[
+"aversion",
+"anger",
+"嗔",
+"Hatred",
+"瞋"
+]
+],
+[
+"Issā",
+"Envy/jealousy",
+"嫉妒",
+[],
+[
+"jealousy",
+"嫉妒",
+"Envy",
+"嫉"
+]
+],
+[
+"Macchariya",
+"Avarice/stinginess",
+"悭吝",
+[],
+[
+"stinginess",
+"miserliness",
+"慳",
+"Avarice",
+"悭",
+"悭吝"
+]
+],
+[
+"Kukkucca",
+"Worry/remorse",
+"追悔",
+[],
+[
+"remorse",
+"惡作",
+"追悔",
+"Worry",
+"恶作"
+]
+],
+[
+"Thina",
+"Sloth",
+"昏沉",
+[],
+[
+"惛沉",
+"Sloth",
+"昏沉"
+]
+],
+[
+"Middha",
+"Torpor",
+"睡眠",
+[],
+[
+"drowsiness",
+"Torpor",
+"睡眠"
+]
+],
+[
+"Vicikicchā",
+"Doubt",
+"疑",
+[],
+[
+"Doubt",
+"疑"
+]
+],
+[
+"Saddhā",
+"Faith",
+"信",
+[],
+[
+"confidence",
+"Faith",
+"信"
+]
+],
+[
+"Sati",
+"Mindfulness",
+"念",
+[],
+[
+"正念",
+"Mindfulness",
+"念"
+]
+],
+[
+"Hirī",
+"Moral Shame",
+"惭",
+[],
+[
+"moral shame",
+"慚",
+"Shame",
+"惭",
+"Moral Shame"
+]
+],
+[
+"Ottappa",
+"Moral Fear",
+"愧",
+[],
+[
+"fear of wrongdoing",
+"fear of wrong doing",
+"moral dread",
+"moral fear",
+"Fear of wrong",
+"愧",
+"Moral Fear"
+]
+],
+[
+"Alobha",
+"Non-greed",
+"无贪",
+[],
+[
+"non attachment",
+"無貪",
+"Non-greed",
+"无贪"
+]
+],
+[
+"Adosa",
+"Non-hatred",
+"无嗔",
+[],
+[
+"non aversion",
+"無瞋",
+"无嗔",
+"無嗔",
+"Non-hatred",
+"无瞋"
+]
+],
+[
+"Tatramajjhattatā",
+"Neutrality of mind/equanimity",
+"中捨性",
+[],
+[
+"equanimity",
+"mental neutrality",
+"Neutrality of mind",
+"中舍性",
+"中捨性"
+]
+],
+[
+"Kāya-passaddhi",
+"Tranquility of mental body",
+"身(心所)轻安",
+[],
+[
+"tranquillity of mental body",
+"tranquility of the mental body",
+"tranquillity of the mental body",
+"tranquility of mental factors",
+"tranquillity of mental factors",
+"身輕安",
+"Tranquility of mental body",
+"身轻安"
+]
+],
+[
+"Citta-passaddhi",
+"Tranquility of consciousness",
+"心轻安",
+[],
+[
+"tranquillity of consciousness",
+"tranquility of mind",
+"tranquillity of mind",
+"心輕安",
+"Tranquility of consciousness",
+"心轻安"
+]
+],
+[
+"Kāya-lahutā",
+"Lightness of mental body",
+"身(心所)轻快性",
+[],
+[
+"lightness of the mental body",
+"lightness of mental factors",
+"身輕快性",
+"Lightness of mental body",
+"身轻快性"
+]
+],
+[
+"Citta-lahutā",
+"Lightness of consciousness",
+"心轻快性",
+[],
+[
+"lightness of mind",
+"心輕快性",
+"Lightness of consciousness",
+"心轻快性"
+]
+],
+[
+"Kāya-mudutā",
+"Malleability of mental body",
+"身(心所)柔软性",
+[],
+[
+"malleability of the mental body",
+"malleability of mental factors",
+"pliancy of mental body",
+"身柔軟性",
+"Malleability of mental body",
+"身柔软性"
+]
+],
+[
+"Citta-mudutā",
+"Malleability of consciousness",
+"心柔软性",
+[],
+[
+"malleability of mind",
+"pliancy of consciousness",
+"心柔軟性",
+"Malleability of consciousness",
+"心柔软性"
+]
+],
+[
+"Kāya-kammaññatā",
+"Wieldiness of mental body",
+"身(心所)适业性",
+[],
+[
+"wieldiness of the mental body",
+"wieldiness of mental factors",
+"workability of mental body",
+"身適業性",
+"Wieldiness of mental body",
+"身适业性"
+]
+],
+[
+"Citta-kammaññatā",
+"Wieldiness of consciousness",
+"心适业性",
+[],
+[
+"wieldiness of mind",
+"workability of consciousness",
+"心適業性",
+"Wieldiness of consciousness",
+"心适业性"
+]
+],
+[
+"Kāya-pāguññatā",
+"Proficiency of mental body",
+"身(心所)练达性",
+[],
+[
+"proficiency of the mental body",
+"proficiency of mental factors",
+"身練達性",
+"Proficiency of mental body",
+"身练达性"
+]
+],
+[
+"Citta-pāguññatā",
+"Proficiency of consciousness",
+"心练达性",
+[],
+[
+"proficiency of mind",
+"心練達性",
+"Proficiency of consciousness",
+"心练达性"
+]
+],
+[
+"Kāyujjukatā",
+"Rectitude of mental body",
+"身(心所)正直性",
+[
+"Kāya-ujukatā"
+],
+[
+"rectitude of the mental body",
+"rectitude of mental factors",
+"uprightness of mental body",
+"Rectitude of mental body",
+"身正直性"
+]
+],
+[
+"Cittujjukatā",
+"Rectitude of consciousness",
+"心正直性",
+[
+"Citta-ujukatā"
+],
+[
+"rectitude of mind",
+"uprightness of consciousness",
+"Rectitude of consciousness",
+"心正直性"
+]
+],
+[
+"Sammā-vācā",
+"Right speech",
+"正语",
+[],
+[
+"正語",
+"Right speech",
+"正语"
+]
+],
+[
+"Sammā-kammanta",
+"Right action",
+"正业",
+[],
+[
+"正業",
+"Right action",
+"正业"
+]
+],
+[
+"Sammā-ājīva",
+"Right livelihood",
+"正命",
+[],
+[
+"Right livelihood",
+"正命"
+]
+],
+[
+"Karuṇā",
+"Compassion",
+"悲悯",
+[],
+[
+"悲悯",
+"悲憫",
+"Compassion",
+"悲"
+]
+],
+[
+"Muditā",
+"Appreciative Joy",
+"随喜",
+[],
+[
+"sympathetic joy",
+"隨喜",
+"喜无量",
+"喜無量",
+"Appreciative joy",
+"随喜",
+"Appreciative Joy"
+]
+],
+[
+"Paññindriya",
+"Wisdom faculty",
+"慧根",
+[
+"Paññā",
+"Amoha"
+],
+[
+"wisdom",
+"non delusion",
+"慧",
+"无痴",
+"無癡",
+"Wisdom faculty",
+"慧根"
+]
+]
 ].map(([pali,en,zh,paliAliases,meaningAliases],i)=>({id:i+1,pali,en,zh,paliAliases,meaningAliases}));
 const cetasikaGroups={
 total:{en:'Mental factors',zh:'心所',pali:'Cetasika',count:52},
-variable:{en:'Ethically Variable Factors',zh:'同他心所',pali:'Aññasamānacetasika',count:13},
+variable:{en:'Ethically Variable Factors',zh:'通一切心所',pali:'Aññasamānacetasika',count:13},
 universal:{en:'Universals',zh:'遍一切心心所',pali:'Sabbacittasādhāraṇa',count:7,first:1,last:7,parent:'variable'},
 occasional:{en:'Occasionals',zh:'杂心所',pali:'Pakiṇṇaka',count:6,first:8,last:13,parent:'variable'},
 unwholesome:{en:'Unwholesome Factors',zh:'不善心所',pali:'Akusalacetasika',count:14,first:14,last:27},
 beautiful:{en:'Beautiful Factors',zh:'美心所',pali:'Sobhanacetasika',count:25},
-beautifulUniversal:{en:'Beautiful Universals',zh:'遍一切美心心所',pali:'Sobhanasādhāraṇa',count:19,first:28,last:46,parent:'beautiful'},
+beautifulUniversal:{en:'Beautiful Universals',zh:'一切美心心所',pali:'Sobhanasādhāraṇa',count:19,first:28,last:46,parent:'beautiful'},
 abstinence:{en:'Abstinences',zh:'离心所',pali:'Virati cetasika',count:3,first:47,last:49,parent:'beautiful'},
 illimitable:{en:'Illimitables',zh:'无量心所',pali:'Appamaññā cetasika',count:2,first:50,last:51,parent:'beautiful'},
-wisdom:{en:'Non-delusion',zh:'无痴（慧）心所',pali:'Amoha / Paññā cetasika',count:1,first:52,last:52,parent:'beautiful'}
+wisdom:{en:'Non-delusion',zh:'无痴',pali:'Amoha / Paññā cetasika',count:1,first:52,last:52,parent:'beautiful'}
 };
+
+revisionNotes.cetasika.basic=[
+ ['The 52 mental factors / 五十二心所','52 = 13 ethically variable + 14 unwholesome + 25 beautiful factors.','52心所＝13通一切心所＋14不善心所＋25美心所。'],
+ ...Object.entries(cetasikaGroups).filter(([,g])=>g.first).map(([key,g])=>[`${g.count} ${g.en} / ${g.count} ${g.zh}`,cetasikaFactors.filter(f=>f.id>=g.first&&f.id<=g.last).map(f=>`${f.pali} — ${f.en}`).join('; '),cetasikaFactors.filter(f=>f.id>=g.first&&f.id<=g.last).map(f=>`${f.pali} — ${f.zh}`).join('；')])
+];
+
 const cetasikaSteps=[['count','total'],['count','variable'],['count','universal'],['names','universal'],['count','occasional'],['names','occasional'],['count','unwholesome'],['names','unwholesome'],['count','beautiful'],['count','beautifulUniversal'],['names','beautifulUniversal'],['count','abstinence'],['names','abstinence'],['count','illimitable'],['names','illimitable'],['count','wisdom'],['names','wisdom']];
 const studyMessages={
-en:{reviseKnowledge:'Revise your Abhidhamma knowledge',reviseKnowledgeIntro:'Choose a topic to revise before beginning the quiz.',reviseCittaLabel:'Citta',reviseCetasikaLabel:'Cetasika',reviseRupaLabel:'Rūpa',existingNotes:'Revision notes →',guided52:'Guided practice · 52 factors →',comingNext:'Coming next',studyHome:'← Back to quiz page',studyReset:'Start revision again',guidedRevision:'GUIDED REVISION',studyTitle:'The 52 cetasikas',studyIntro:'Begin with the counts, then recall each mental factor one by one. Enter its Pāli name and its English or Chinese meaning.',studyOutline:'Revision sequence',studySource:'Source: 2016 Abhidhamma Course at Pa-Auk Meditation Centre, Part 2 — Mental Factors, pp. 1–2. English names follow the notes; Chinese meanings are added for revision. Progress is saved on this browser when available.',storageUnavailable:'This browser cannot save progress. You can continue practising while this page stays open.',resetPrompt:'Clear your saved Cetasika revision and begin again?',cancel:'Cancel',resetYes:'Clear and restart',rupaTitle:'Rūpa revision',rupaPending:'Rūpa guided revision is coming next. We are starting with all 52 cetasikas.',numberLabel:'Your answer',checkCount:'Check answer',checkPair:'Check & add',paliLabel:'Pāli',meaningLabel:'English or Chinese',paliPlaceholder:'Enter a Pāli name',meaningPlaceholder:'Enter its meaning',entryHelp:'Use any order within this group. Pāli accents, spaces and hyphens are optional. Enter both columns for the same factor.',continue:'Continue →',showHint:'Show one answer',countHint:'Show the count',accepted:'Correctly entered',hinted:'Hint used',completedGroup:'All factors in this group are correct. Continue to the next group.',countCorrect:'Correct!',wrongCount:'Not quite. Try the number again.',needBoth:'Please enter both the Pāli name and its English or Chinese meaning.',unknownPali:'That Pāli name does not match this group. Check the spelling and try again.',duplicate:'You have already entered this factor. Try another one.',wrongMeaning:'The Pāli name belongs to this group, but the meaning does not match. Please try again.',added:'Correct — the pair has been added.',allDone:'You have revised all 52 cetasikas!',doneDescription:'You have completed the group counts and entered every factor in Pāli with its English or Chinese meaning.',summary:'Your complete revision',beginQuiz:'Practise the Cetasika quiz →',independent:'Entered without a factor hint',withHints:'Entered after a factor hint',noEntries:'Your correct pairs will appear here.',namesQuestion:'What are they?',totalQuestion:'How many cetasikas are there in total?',countWord:'Count',recallWord:'Names',progressWord:'recalled',factorWord:'factors',stepWord:'Step',ofWord:'of',hintPrefix:'Try this pair',saved:'Your correct answers are kept when you return to the quiz page.'},
-zh:{reviseKnowledge:'复习阿毗达摩知识',reviseKnowledgeIntro:'开始测验前，请选择要复习的主题。',reviseCittaLabel:'心 Citta',reviseCetasikaLabel:'心所 Cetasika',reviseRupaLabel:'色 Rūpa',existingNotes:'复习笔记 →',guided52:'引导练习 · 52心所 →',comingNext:'稍后加入',studyHome:'← 返回测验首页',studyReset:'重新开始复习',guidedRevision:'引导复习',studyTitle:'五十二心所',studyIntro:'先回答总数与各类心所的数量，再逐一回忆每一种心所。在两栏中分别输入巴利语名称及英文或中文含义。',studyOutline:'复习顺序',studySource:'资料来源：帕奥禅修中心2016年阿毗达摩课程，第二部分——心所，第1–2页。英文名称依据讲义，中文含义另加以便复习。浏览器允许时会保存进度。',storageUnavailable:'此浏览器无法保存进度。您仍可在本页保持开启时继续练习。',resetPrompt:'清除已保存的心所复习进度，并重新开始吗？',cancel:'取消',resetYes:'清除并重新开始',rupaTitle:'色法复习',rupaPending:'色法引导复习将稍后加入。目前先完成五十二心所的复习。',numberLabel:'您的答案',checkCount:'核对答案',checkPair:'核对并加入',paliLabel:'巴利语 Pāli',meaningLabel:'英文或中文',paliPlaceholder:'输入巴利语名称',meaningPlaceholder:'输入其含义',entryHelp:'本组内可按任意顺序输入。巴利语可省略变音符号、空格及连字符。两栏必须对应同一种心所。',continue:'继续 →',showHint:'提示一种心所',countHint:'提示数量',accepted:'已正确输入',hinted:'已用提示',completedGroup:'本组心所已全部答对。请继续下一组。',countCorrect:'正确！',wrongCount:'还不正确，请再试一次。',needBoth:'请同时输入巴利语名称及英文或中文含义。',unknownPali:'此巴利语名称不符合本组心所，请检查拼写后重试。',duplicate:'您已经输入过这种心所，请输入另一种。',wrongMeaning:'巴利语名称属于本组，但含义不对应，请再试一次。',added:'正确，已加入这一组答案。',allDone:'您已完成五十二心所的复习！',doneDescription:'您已答完各组数量，并为每一种心所输入巴利语名称及英文或中文含义。',summary:'完整复习结果',beginQuiz:'练习心所测验 →',independent:'未用心所提示答出',withHints:'使用心所提示后答出',noEntries:'您答对的词对将显示在这里。',namesQuestion:'它们分别是什么？',totalQuestion:'心所一共有多少种？',countWord:'数量',recallWord:'名称',progressWord:'已回忆',factorWord:'种心所',stepWord:'第',ofWord:'/',hintPrefix:'请试着输入这一对',saved:'返回测验首页后，已答对的内容仍会保留。'}
+en:{reviseKnowledge:'Revise your Abhidhamma knowledge',reviseKnowledgeIntro:'Choose a topic to revise before beginning the quiz.',reviseCittaLabel:'Citta',reviseCetasikaLabel:'Cetasika',reviseRupaLabel:'Rūpa',existingNotes:'Revision notes →',guided52:'Guided practice · 52 factors →',comingNext:'Coming next',studyHome:'← Back to quiz page',studyReset:'Start revision again',guidedRevision:'GUIDED REVISION',studyTitle:'The 52 cetasikas',studyIntro:'Begin with the counts, then recall each mental factor one by one. Enter its Pāli name and its English or Chinese meaning.',studyOutline:'Revision sequence',studySource:'Source: Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020, pp. 2–3. English and Chinese terms follow the bilingual table. Progress is saved on this browser when available.',storageUnavailable:'This browser cannot save progress. You can continue practising while this page stays open.',resetPrompt:'Clear your saved Cetasika revision and begin again?',cancel:'Cancel',resetYes:'Clear and restart',rupaTitle:'Rūpa revision',rupaPending:'Rūpa guided revision is coming next. We are starting with all 52 cetasikas.',numberLabel:'Your answer',checkCount:'Check answer',checkPair:'Check & add',paliLabel:'Pāli',meaningLabel:'English or Chinese',paliPlaceholder:'Enter a Pāli name',meaningPlaceholder:'Enter its meaning',entryHelp:'Use any order within this group. Pāli accents, spaces and hyphens are optional. Enter both columns for the same factor.',continue:'Continue →',showHint:'Show one answer',countHint:'Show the count',accepted:'Correctly entered',hinted:'Hint used',completedGroup:'All factors in this group are correct. Continue to the next group.',countCorrect:'Correct!',wrongCount:'Not quite. Try the number again.',needBoth:'Please enter both the Pāli name and its English or Chinese meaning.',unknownPali:'That Pāli name does not match this group. Check the spelling and try again.',duplicate:'You have already entered this factor. Try another one.',wrongMeaning:'The Pāli name belongs to this group, but the meaning does not match. Please try again.',added:'Correct — the pair has been added.',allDone:'You have revised all 52 cetasikas!',doneDescription:'You have completed the group counts and entered every factor in Pāli with its English or Chinese meaning.',summary:'Your complete revision',beginQuiz:'Practise the Cetasika quiz →',independent:'Entered without a factor hint',withHints:'Entered after a factor hint',noEntries:'Your correct pairs will appear here.',namesQuestion:'What are they?',totalQuestion:'How many cetasikas are there in total?',countWord:'Count',recallWord:'Names',progressWord:'recalled',factorWord:'factors',stepWord:'Step',ofWord:'of',hintPrefix:'Try this pair',saved:'Your correct answers are kept when you return to the quiz page.'},
+zh:{reviseKnowledge:'复习阿毗达摩知识',reviseKnowledgeIntro:'开始测验前，请选择要复习的主题。',reviseCittaLabel:'心 Citta',reviseCetasikaLabel:'心所 Cetasika',reviseRupaLabel:'色 Rūpa',existingNotes:'复习笔记 →',guided52:'引导练习 · 52心所 →',comingNext:'稍后加入',studyHome:'← 返回测验首页',studyReset:'重新开始复习',guidedRevision:'引导复习',studyTitle:'五十二心所',studyIntro:'先回答总数与各类心所的数量，再逐一回忆每一种心所。在两栏中分别输入巴利语名称及英文或中文含义。',studyOutline:'复习顺序',studySource:'资料来源：Ven Sugatavaṃsa，2020年8月15日《Revision on Mental Factors (Cetasika)》，第2–3页。英文与中文术语依照该双语表格。浏览器允许时会保存进度。',storageUnavailable:'此浏览器无法保存进度。您仍可在本页保持开启时继续练习。',resetPrompt:'清除已保存的心所复习进度，并重新开始吗？',cancel:'取消',resetYes:'清除并重新开始',rupaTitle:'色法复习',rupaPending:'色法引导复习将稍后加入。目前先完成五十二心所的复习。',numberLabel:'您的答案',checkCount:'核对答案',checkPair:'核对并加入',paliLabel:'巴利语 Pāli',meaningLabel:'英文或中文',paliPlaceholder:'输入巴利语名称',meaningPlaceholder:'输入其含义',entryHelp:'本组内可按任意顺序输入。巴利语可省略变音符号、空格及连字符。两栏必须对应同一种心所。',continue:'继续 →',showHint:'提示一种心所',countHint:'提示数量',accepted:'已正确输入',hinted:'已用提示',completedGroup:'本组心所已全部答对。请继续下一组。',countCorrect:'正确！',wrongCount:'还不正确，请再试一次。',needBoth:'请同时输入巴利语名称及英文或中文含义。',unknownPali:'此巴利语名称不符合本组心所，请检查拼写后重试。',duplicate:'您已经输入过这种心所，请输入另一种。',wrongMeaning:'巴利语名称属于本组，但含义不对应，请再试一次。',added:'正确，已加入这一组答案。',allDone:'您已完成五十二心所的复习！',doneDescription:'您已答完各组数量，并为每一种心所输入巴利语名称及英文或中文含义。',summary:'完整复习结果',beginQuiz:'练习心所测验 →',independent:'未用心所提示答出',withHints:'使用心所提示后答出',noEntries:'您答对的词对将显示在这里。',namesQuestion:'它们分别是什么？',totalQuestion:'心所一共有多少种？',countWord:'数量',recallWord:'名称',progressWord:'已回忆',factorWord:'种心所',stepWord:'第',ofWord:'/',hintPrefix:'请试着输入这一对',saved:'返回测验首页后，已答对的内容仍会保留。'}
 };
 Object.assign(translations.en,studyMessages.en,{redoGroup:'↻ Redo this group',redoGroupHelp:'Start this group again; keep your progress in other groups.',groupRestarted:'This group is ready to practise again. Enter each factor from memory.',returnSummary:'Return to all 52 →',studyJumpHelp:'Choose a group to start it again from the beginning. Parent groups also restart their subgroups.'});Object.assign(translations.zh,studyMessages.zh,{redoGroup:'↻ 重做本组',redoGroupHelp:'重新练习本组，其他组的进度会保留。',groupRestarted:'本组已重新开始，请凭记忆逐一输入心所。',returnSummary:'返回五十二心所总表 →',studyJumpHelp:'点击任一组，从头开始练习。选择大组时，其下的小组也会重新开始。'});
+
+Object.assign(translations.en,{referenceTag:'CETASIKA REVISION',referenceTitle:'Revise the mental factors',referenceIntro:'Read the table, then close this popup and recall the factors from memory.',referenceThisGroup:'This group',referenceAllGroups:'All 52 cetasikas',referenceReturn:'Return to practice',referenceClose:'Close revision',reviseGroupTable:'Revise this group',referenceSource:'Source: Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020, pp. 2–3.',englishLabel:'English',chineseLabel:'Chinese',hinted:'Revision viewed',independent:'Entered without revision help',withHints:'Entered after revision help'});
+Object.assign(translations.zh,{referenceTag:'心所复习',referenceTitle:'复习心所表',referenceIntro:'先阅读表格，再关闭弹窗，凭记忆逐一输入心所。',referenceThisGroup:'本组心所',referenceAllGroups:'全部五十二心所',referenceReturn:'返回练习',referenceClose:'关闭复习表',reviseGroupTable:'复习本组心所表',referenceSource:'资料来源：Ven Sugatavaṃsa，2020年8月15日《Revision on Mental Factors (Cetasika)》，第2–3页。',englishLabel:'英文',chineseLabel:'中文',hinted:'已查看复习表',independent:'未查看复习表答出',withHints:'查看复习表后答出'});
+
 function readLocal(key){try{return localStorage.getItem(key);}catch{return null;}}
 function writeLocal(key,value){try{localStorage.setItem(key,value);return true;}catch{return false;}}
 const studyStorageKey='abhidhammaCetasikaRevisionV1';
@@ -348,7 +977,7 @@ function findStudyPair(pali,meaning,key){const factors=groupFactors(key),f=facto
 function node(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
 function groupName(g){return language==='zh'?g.zh:g.en;}
 function displayStudyFeedback(){const e=$('studyFeedback');if(!e)return;e.textContent=studyFeedback?t(studyFeedback.key):'';e.className='study-feedback '+(studyFeedback?.error?'wrong':'right');}
-function studyTable(factors,caption){const wrap=node('div','study-table-wrap'),table=node('table','study-table');if(caption)table.append(node('caption','',caption));const head=node('thead'),hr=node('tr');hr.append(node('th','',t('paliLabel')),node('th','',t('meaningLabel')));head.append(hr);table.append(head);const body=node('tbody');for(const f of factors){const row=node('tr'),p=node('td','',f.pali),m=node('td','',`${f.en} · ${f.zh}`);if(studyState.hints.includes(f.id))p.append(node('small','',t('hinted')));row.append(p,m);body.append(row);}table.append(body);wrap.append(table);return wrap;}
+function studyTable(factors,caption){const wrap=node('div','study-table-wrap'),table=node('table','study-table accepted-pairs');if(caption)table.append(node('caption','',caption));const head=node('thead'),hr=node('tr');for(const label of [t('paliLabel'),t('englishLabel'),t('chineseLabel')]){const th=node('th','',label);th.setAttribute('scope','col');hr.append(th);}head.append(hr);table.append(head);const body=node('tbody');for(const f of factors){const row=node('tr'),p=node('td','',f.pali);if(studyState.hints.includes(f.id))p.append(node('small','',t('hinted')));row.append(p,node('td','',f.en),node('td','',f.zh));body.append(row);}table.append(body);wrap.append(table);return wrap;}
 function focusStudy(){const e=$('studyNumber')||$('studyPali')||$('studyContinue')||$('studyStageHeading');e?.focus({preventScroll:true});}
 function visitStudyStage(target){
   if(!Number.isInteger(target)||target<0||target>cetasikaSteps.length)return;
@@ -427,9 +1056,14 @@ function renderStudy(){
   }
   const feedback=node('p','study-feedback');feedback.id='studyFeedback';feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');card.append(feedback);displayStudyFeedback();
   if(done){if(kind==='count')card.append(node('p','right',`${t('countCorrect')} ${g.count} ${groupName(g)} (${g.pali})`));else card.append(node('p','right',t('completedGroup')));}
-  else{
-    const hintButton=node('button','text-button',t(kind==='count'?'countHint':'showHint'));hintButton.type='button';const hint=node('div','study-hint hidden');hint.setAttribute('role','status');const alreadyHinted=kind==='count'?studyState.countHints.includes(key):groupFactors(key).find(f=>studyState.hints.includes(f.id)&&!studyState.entries.includes(f.id));function showHint(){hint.classList.remove('hidden');hint.textContent=kind==='count'?`${t('numberLabel')}: ${g.count}`:`${t('hintPrefix')}: ${alreadyHinted?.pali||(groupFactors(key).find(f=>!studyState.entries.includes(f.id))).pali} · ${alreadyHinted?.en||(groupFactors(key).find(f=>!studyState.entries.includes(f.id))).en} · ${alreadyHinted?.zh||(groupFactors(key).find(f=>!studyState.entries.includes(f.id))).zh}`;}
-    if(alreadyHinted)showHint();hintButton.onclick=()=>{if(kind==='count'){if(!studyState.countHints.includes(key))studyState.countHints.push(key);}else{const f=groupFactors(key).find(f=>!studyState.entries.includes(f.id));if(!studyState.hints.includes(f.id))studyState.hints.push(f.id);}saveStudy();renderStudy();focusStudy();};card.append(hintButton,hint);
+  else if(kind==='count'){
+    const hintButton=node('button','text-button',t('countHint'));hintButton.type='button';
+    const hint=node('div','study-hint hidden');hint.setAttribute('role','status');
+    if(studyState.countHints.includes(key)){hint.classList.remove('hidden');hint.textContent=`${t('numberLabel')}: ${g.count}`;}
+    hintButton.onclick=()=>{if(!studyState.countHints.includes(key))studyState.countHints.push(key);saveStudy();renderStudy();focusStudy();};card.append(hintButton,hint);
+  }
+  if(kind==='names'){
+    const revise=node('button','text-button',t('reviseGroupTable'));revise.id='reviseStudyTable';revise.type='button';revise.onclick=()=>showCetasikaReference(key);card.append(revise);
   }
   if(kind==='names'){const accepted=groupFactors(key).filter(f=>studyState.entries.includes(f.id));if(accepted.length)card.append(studyTable(accepted,t('accepted')));else card.append(node('p','study-help',t('noEntries')));}
   if(done){const foot=node('div','study-next'),next=node('button','primary',t(studyState.redoReturnStage===cetasikaSteps.length?'returnSummary':'continue'));next.id='studyContinue';next.type='button';next.onclick=()=>visitStudyStage(nextStudyStage());foot.append(next);card.append(foot);}
@@ -445,8 +1079,54 @@ $('studyHome').onclick=()=>leaveStudy();
 $('studyReset').onclick=()=>{$('studyResetConfirm').classList.remove('hidden');$('studyResetCancel').focus();};
 $('studyResetCancel').onclick=()=>{$('studyResetConfirm').classList.add('hidden');$('studyReset').focus();};
 $('studyResetYes').onclick=()=>{studyState=newStudy();studyFeedback=null;saveStudy();$('studyResetConfirm').classList.add('hidden');renderStudy();focusStudy();};
+let cetasikaReference={group:'universal',all:false},referencePreviousOverflow='';
+function referenceLeafKeys(group){
+  const included=new Set(group==='total'?Object.keys(cetasikaGroups):[group]);
+  for(let changed=true;changed;){changed=false;for(const [key,g] of Object.entries(cetasikaGroups))if(g.parent&&included.has(g.parent)&&!included.has(key)){included.add(key);changed=true;}}
+  return Object.keys(cetasikaGroups).filter(key=>included.has(key)&&cetasikaGroups[key].first);
+}
+function shownReferenceKeys(){return referenceLeafKeys(cetasikaReference.all?'total':cetasikaReference.group);}
+function rememberReferenceViewed(){
+  for(const key of shownReferenceKeys())for(const f of groupFactors(key))if(!studyState.entries.includes(f.id)&&!studyState.hints.includes(f.id))studyState.hints.push(f.id);
+  saveStudy();
+}
+function referenceTable(factors){
+  const wrap=node('div','study-table-wrap'),table=node('table','study-table');
+  const head=node('thead'),tr=node('tr');
+  for(const label of ['#',t('paliLabel'),'English','中文']){const th=node('th','',label);th.setAttribute('scope','col');tr.append(th);}head.append(tr);table.append(head);
+  const body=node('tbody');for(const f of factors){const row=node('tr');row.append(node('td','',String(f.id)),node('td','',f.pali),node('td','',f.en),node('td','',f.zh));body.append(row);}table.append(body);wrap.append(table);return wrap;
+}
+function renderCetasikaReference(){
+  $('cetasikaReferenceTitle').textContent=t('referenceTitle');
+  $('closeCetasikaReference').setAttribute('aria-label',t('referenceClose'));
+  $('referenceThisGroup').setAttribute('aria-pressed',String(!cetasikaReference.all));
+  $('referenceAllGroups').setAttribute('aria-pressed',String(cetasikaReference.all));
+  const content=$('cetasikaReferenceContent');content.replaceChildren();let previousParent=null;
+  for(const key of shownReferenceKeys()){
+    const g=cetasikaGroups[key],section=node('section','reference-group');
+    if(g.parent&&g.parent!==previousParent){const parent=cetasikaGroups[g.parent];section.append(node('div','reference-parent',`${parent.count} ${parent.en} · ${parent.zh} (${parent.pali})`));}
+    previousParent=g.parent||null;
+    section.append(node('h3','',`${g.count} ${g.en} · ${g.zh}`),node('p','pali-title',g.pali),referenceTable(groupFactors(key)));content.append(section);
+  }
+  content.append(node('p','reference-source',t('referenceSource')));
+}
+function showCetasikaReference(group){
+  cetasikaReference={group,all:false};rememberReferenceViewed();renderCetasikaReference();
+  referencePreviousOverflow=document.body.style.overflow||'';document.body.style.overflow='hidden';
+  $('cetasikaReferenceModal').classList.remove('hidden');$('cetasikaReferenceContent').scrollTop=0;$('closeCetasikaReference').focus();
+}
+function closeCetasikaReference(){
+  $('cetasikaReferenceModal').classList.add('hidden');document.body.style.overflow=referencePreviousOverflow;
+  ($('reviseStudyTable')||$('studyPali')||$('studyStageHeading')).focus({preventScroll:true});
+}
+$('closeCetasikaReference').onclick=closeCetasikaReference;
+$('returnFromCetasikaReference').onclick=closeCetasikaReference;
+$('referenceThisGroup').onclick=()=>{cetasikaReference.all=false;rememberReferenceViewed();renderCetasikaReference();$('cetasikaReferenceContent').scrollTop=0;};
+$('referenceAllGroups').onclick=()=>{cetasikaReference.all=true;rememberReferenceViewed();renderCetasikaReference();$('cetasikaReferenceContent').scrollTop=0;};
+$('cetasikaReferenceModal').onclick=e=>{if(e.target===$('cetasikaReferenceModal'))closeCetasikaReference();};
+
 // Keep focus inside any open dialog and return it on Escape.
-document.addEventListener('keydown',e=>{const modal=[...document.querySelectorAll('.modal:not(.hidden)')].at(-1);if(!modal)return;const focusable=[...modal.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);if(e.key==='Tab'&&focusable.length){const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&(document.activeElement===first||!modal.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!modal.contains(document.activeElement))){e.preventDefault();first.focus();}}if(e.key==='Escape'){if(modal.id==='rupaRevisionModal')$('closeRupa').click();else if(modal.id==='revisionModal')$('closeRevision').click();else if(modal.id==='resultModal')$('closeReview').click();}});
+document.addEventListener('keydown',e=>{const modal=[...document.querySelectorAll('.modal:not(.hidden)')].at(-1);if(!modal)return;const focusable=[...modal.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);if(e.key==='Tab'&&focusable.length){const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&(document.activeElement===first||!modal.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!modal.contains(document.activeElement))){e.preventDefault();first.focus();}}if(e.key==='Escape'){if(modal.id==='cetasikaReferenceModal')closeCetasikaReference();else if(modal.id==='rupaRevisionModal')$('closeRupa').click();else if(modal.id==='revisionModal')$('closeRevision').click();else if(modal.id==='resultModal')$('closeReview').click();}});
 updateLanguage();
 
 </script>
