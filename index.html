@@ -15,6 +15,7 @@
 @media(max-width:700px){.art{display:flex;min-height:190px;width:100%;max-width:320px;margin:0 auto}.lotus{width:170px;height:150px}.art:before{width:270px;height:270px}.art:after{width:215px;height:215px}.hero{gap:22px}.revision-entry{padding:20px}.revision-links a{min-width:100%;flex:auto}.study-card{padding:22px 18px}.study-table td,.study-table th{padding:10px 8px}.study-top{align-items:start}.study-top .text-button{max-width:50%;text-align:right}.pair-fields{gap:10px}.study-field input{padding:12px 9px;font-size:16px}.count-answer .primary{width:auto}.study-bottom-actions button{flex:1}.study-next .primary{width:100%}}
 
 .study-repeat{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 24px}.study-repeat .secondary{flex:none}
+.study-overview ol li,.study-overview ol li[aria-current=step]{padding:0;border:0;background:transparent}.study-jump{padding:9px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;color:var(--ink);background:#fff;text-align:left}.study-jump:hover{border-color:var(--green);background:#f5f9f4}.study-jump[aria-current=step]{border-color:var(--green);background:#e9f2eb;color:var(--deep)}
 </style>
 </head>
 <body>
@@ -42,7 +43,7 @@
   <div id="studyResetConfirm" class="reset-confirm hidden"><p data-i18n="resetPrompt">Clear your saved Cetasika revision and begin again?</p><div class="study-bottom-actions"><button type="button" class="secondary" id="studyResetCancel" data-i18n="cancel">Cancel</button><button type="button" class="primary" id="studyResetYes" data-i18n="resetYes">Clear and restart</button></div></div>
   <div class="study-progress"><div class="topline"><span id="studyStageProgress"></span><span id="studyFactorProgress"></span></div><div class="track" role="progressbar" aria-label="Cetasikas recalled" aria-valuemin="0" aria-valuemax="52" id="studyProgress"><div class="fill" id="studyProgressFill"></div></div></div>
   <div id="studyStage"></div>
-  <details class="study-overview"><summary data-i18n="studyOutline">Revision sequence</summary><ol id="studyOutline"></ol></details>
+  <details class="study-overview" open><summary data-i18n="studyOutline">Revision sequence</summary><p class="study-help" data-i18n="studyJumpHelp">Choose any group to jump to it. Your answers are kept.</p><ol id="studyOutline"></ol></details>
   <p class="study-source" data-i18n="studySource">Source: 2016 Abhidhamma Course at Pa-Auk Meditation Centre, Part 2 — Mental Factors, pp. 1–2. English names follow the notes; Chinese meanings are added for revision. Progress is saved on this browser when available.</p>
   <p class="study-source hidden" id="studyStorageNotice" data-i18n="storageUnavailable">This browser cannot save progress. You can continue practising while this page stays open.</p>
 </section>
@@ -316,16 +317,31 @@ const studyMessages={
 en:{reviseKnowledge:'Revise your Abhidhamma knowledge',reviseKnowledgeIntro:'Choose a topic to revise before beginning the quiz.',reviseCittaLabel:'Citta',reviseCetasikaLabel:'Cetasika',reviseRupaLabel:'Rūpa',existingNotes:'Revision notes →',guided52:'Guided practice · 52 factors →',comingNext:'Coming next',studyHome:'← Back to quiz page',studyReset:'Start revision again',guidedRevision:'GUIDED REVISION',studyTitle:'The 52 cetasikas',studyIntro:'Begin with the counts, then recall each mental factor one by one. Enter its Pāli name and its English or Chinese meaning.',studyOutline:'Revision sequence',studySource:'Source: 2016 Abhidhamma Course at Pa-Auk Meditation Centre, Part 2 — Mental Factors, pp. 1–2. English names follow the notes; Chinese meanings are added for revision. Progress is saved on this browser when available.',storageUnavailable:'This browser cannot save progress. You can continue practising while this page stays open.',resetPrompt:'Clear your saved Cetasika revision and begin again?',cancel:'Cancel',resetYes:'Clear and restart',rupaTitle:'Rūpa revision',rupaPending:'Rūpa guided revision is coming next. We are starting with all 52 cetasikas.',numberLabel:'Your answer',checkCount:'Check answer',checkPair:'Check & add',paliLabel:'Pāli',meaningLabel:'English or Chinese',paliPlaceholder:'Enter a Pāli name',meaningPlaceholder:'Enter its meaning',entryHelp:'Use any order within this group. Pāli accents, spaces and hyphens are optional. Enter both columns for the same factor.',continue:'Continue →',showHint:'Show one answer',countHint:'Show the count',accepted:'Correctly entered',hinted:'Hint used',completedGroup:'All factors in this group are correct. Continue to the next group.',countCorrect:'Correct!',wrongCount:'Not quite. Try the number again.',needBoth:'Please enter both the Pāli name and its English or Chinese meaning.',unknownPali:'That Pāli name does not match this group. Check the spelling and try again.',duplicate:'You have already entered this factor. Try another one.',wrongMeaning:'The Pāli name belongs to this group, but the meaning does not match. Please try again.',added:'Correct — the pair has been added.',allDone:'You have revised all 52 cetasikas!',doneDescription:'You have completed the group counts and entered every factor in Pāli with its English or Chinese meaning.',summary:'Your complete revision',beginQuiz:'Practise the Cetasika quiz →',independent:'Entered without a factor hint',withHints:'Entered after a factor hint',noEntries:'Your correct pairs will appear here.',namesQuestion:'What are they?',totalQuestion:'How many cetasikas are there in total?',countWord:'Count',recallWord:'Names',progressWord:'recalled',factorWord:'factors',stepWord:'Step',ofWord:'of',hintPrefix:'Try this pair',saved:'Your correct answers are kept when you return to the quiz page.'},
 zh:{reviseKnowledge:'复习阿毗达摩知识',reviseKnowledgeIntro:'开始测验前，请选择要复习的主题。',reviseCittaLabel:'心 Citta',reviseCetasikaLabel:'心所 Cetasika',reviseRupaLabel:'色 Rūpa',existingNotes:'复习笔记 →',guided52:'引导练习 · 52心所 →',comingNext:'稍后加入',studyHome:'← 返回测验首页',studyReset:'重新开始复习',guidedRevision:'引导复习',studyTitle:'五十二心所',studyIntro:'先回答总数与各类心所的数量，再逐一回忆每一种心所。在两栏中分别输入巴利语名称及英文或中文含义。',studyOutline:'复习顺序',studySource:'资料来源：帕奥禅修中心2016年阿毗达摩课程，第二部分——心所，第1–2页。英文名称依据讲义，中文含义另加以便复习。浏览器允许时会保存进度。',storageUnavailable:'此浏览器无法保存进度。您仍可在本页保持开启时继续练习。',resetPrompt:'清除已保存的心所复习进度，并重新开始吗？',cancel:'取消',resetYes:'清除并重新开始',rupaTitle:'色法复习',rupaPending:'色法引导复习将稍后加入。目前先完成五十二心所的复习。',numberLabel:'您的答案',checkCount:'核对答案',checkPair:'核对并加入',paliLabel:'巴利语 Pāli',meaningLabel:'英文或中文',paliPlaceholder:'输入巴利语名称',meaningPlaceholder:'输入其含义',entryHelp:'本组内可按任意顺序输入。巴利语可省略变音符号、空格及连字符。两栏必须对应同一种心所。',continue:'继续 →',showHint:'提示一种心所',countHint:'提示数量',accepted:'已正确输入',hinted:'已用提示',completedGroup:'本组心所已全部答对。请继续下一组。',countCorrect:'正确！',wrongCount:'还不正确，请再试一次。',needBoth:'请同时输入巴利语名称及英文或中文含义。',unknownPali:'此巴利语名称不符合本组心所，请检查拼写后重试。',duplicate:'您已经输入过这种心所，请输入另一种。',wrongMeaning:'巴利语名称属于本组，但含义不对应，请再试一次。',added:'正确，已加入这一组答案。',allDone:'您已完成五十二心所的复习！',doneDescription:'您已答完各组数量，并为每一种心所输入巴利语名称及英文或中文含义。',summary:'完整复习结果',beginQuiz:'练习心所测验 →',independent:'未用心所提示答出',withHints:'使用心所提示后答出',noEntries:'您答对的词对将显示在这里。',namesQuestion:'它们分别是什么？',totalQuestion:'心所一共有多少种？',countWord:'数量',recallWord:'名称',progressWord:'已回忆',factorWord:'种心所',stepWord:'第',ofWord:'/',hintPrefix:'请试着输入这一对',saved:'返回测验首页后，已答对的内容仍会保留。'}
 };
-Object.assign(translations.en,studyMessages.en,{redoGroup:'↻ Redo this group',redoGroupHelp:'Start this group again; keep your progress in other groups.',groupRestarted:'This group is ready to practise again. Enter each factor from memory.',returnSummary:'Return to all 52 →'});Object.assign(translations.zh,studyMessages.zh,{redoGroup:'↻ 重做本组',redoGroupHelp:'重新练习本组，其他组的进度会保留。',groupRestarted:'本组已重新开始，请凭记忆逐一输入心所。',returnSummary:'返回五十二心所总表 →'});
+Object.assign(translations.en,studyMessages.en,{redoGroup:'↻ Redo this group',redoGroupHelp:'Start this group again; keep your progress in other groups.',groupRestarted:'This group is ready to practise again. Enter each factor from memory.',returnSummary:'Return to all 52 →',studyJumpHelp:'Choose any group to jump to it. Your answers are kept.'});Object.assign(translations.zh,studyMessages.zh,{redoGroup:'↻ 重做本组',redoGroupHelp:'重新练习本组，其他组的进度会保留。',groupRestarted:'本组已重新开始，请凭记忆逐一输入心所。',returnSummary:'返回五十二心所总表 →',studyJumpHelp:'点击任一组即可跳转，已输入的答案会保留。'});
 function readLocal(key){try{return localStorage.getItem(key);}catch{return null;}}
 function writeLocal(key,value){try{localStorage.setItem(key,value);return true;}catch{return false;}}
 const studyStorageKey='abhidhammaCetasikaRevisionV1';
-function newStudy(){return {version:1,stage:0,counts:[],entries:[],hints:[],countHints:[],draft:{},redoReturnStage:null};}
+function newStudy(){return {version:1,stage:0,counts:[],entries:[],hints:[],countHints:[],draft:{},drafts:{},redoReturnStage:null};}
 function groupFactors(key){const g=cetasikaGroups[key];return cetasikaFactors.filter(f=>f.id>=g.first&&f.id<=g.last);}
 function stageComplete(step,state){const [kind,key]=step;return kind==='count'?state.counts.includes(key):groupFactors(key).every(f=>state.entries.includes(f.id));}
-function restoreStudy(){try{const raw=JSON.parse(readLocal(studyStorageKey));if(!raw||raw.version!==1)return newStudy();const state=newStudy();state.stage=Number.isInteger(raw.stage)?Math.max(0,Math.min(cetasikaSteps.length,raw.stage)):0;for(const key of ['entries','hints'])state[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>Number.isInteger(id)&&id>=1&&id<=52))]:[];for(const key of ['counts','countHints'])state[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>Object.hasOwn(cetasikaGroups,id)))]:[];state.draft=raw.draft&&typeof raw.draft==='object'?Object.fromEntries(['number','pali','meaning'].map(k=>[k,typeof raw.draft[k]==='string'?raw.draft[k].slice(0,200):''])):{};for(let i=0;i<state.stage;i++){if(!stageComplete(cetasikaSteps[i],state)){state.stage=i;state.draft={};break;}}if(raw.redoReturnStage===cetasikaSteps.length&&cetasikaSteps[state.stage]?.[0]==='names')state.redoReturnStage=raw.redoReturnStage;return state;}catch{return newStudy();}}
+function cleanStudyDraft(raw){return raw&&typeof raw==='object'?Object.fromEntries(['number','pali','meaning'].map(k=>[k,typeof raw[k]==='string'?raw[k].slice(0,200):''])):{};}
+function restoreStudy(){
+  try{
+    const raw=JSON.parse(readLocal(studyStorageKey));if(!raw||raw.version!==1)return newStudy();
+    const state=newStudy();state.stage=Number.isInteger(raw.stage)?Math.max(0,Math.min(cetasikaSteps.length,raw.stage)):0;
+    for(const key of ['entries','hints'])state[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>Number.isInteger(id)&&id>=1&&id<=52))]:[];
+    for(const key of ['counts','countHints'])state[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>Object.hasOwn(cetasikaGroups,id)))]:[];
+    state.draft=cleanStudyDraft(raw.draft);
+    if(raw.drafts&&typeof raw.drafts==='object')for(let i=0;i<cetasikaSteps.length;i++)if(Object.hasOwn(raw.drafts,String(i)))state.drafts[i]=cleanStudyDraft(raw.drafts[i]);
+    // Direct group selection may leave earlier steps unfinished.
+    if(state.stage===cetasikaSteps.length&&!cetasikaSteps.every(step=>stageComplete(step,state))){state.stage=cetasikaSteps.findIndex(step=>!stageComplete(step,state));state.draft=state.drafts[state.stage]||{};}
+    if(raw.redoReturnStage===cetasikaSteps.length&&cetasikaSteps[state.stage]?.[0]==='names')state.redoReturnStage=raw.redoReturnStage;
+    return state;
+  }catch{return newStudy();}
+}
 let studyState=restoreStudy(),studyStorageAvailable=true,studyFeedback=null,studyReturnFocus=null,revisionTopicOverride=null;
-function saveStudy(){studyStorageAvailable=writeLocal(studyStorageKey,JSON.stringify(studyState));$('studyStorageNotice').classList.toggle('hidden',studyStorageAvailable);}
+function rememberStudyDraft(){if(studyState.stage<cetasikaSteps.length)studyState.drafts[studyState.stage]={...studyState.draft};}
+function saveStudy(){rememberStudyDraft();studyStorageAvailable=writeLocal(studyStorageKey,JSON.stringify(studyState));$('studyStorageNotice').classList.toggle('hidden',studyStorageAvailable);}
 function normalizeStudy(value){return value.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[\s\p{P}\p{S}]/gu,'');}
 function matchesStudy(value,alternatives){const n=normalizeStudy(value);return !!n&&alternatives.some(v=>normalizeStudy(v)===n);}
 function findStudyPair(pali,meaning,key){const factors=groupFactors(key),f=factors.find(f=>matchesStudy(pali,[f.pali,...f.paliAliases]));if(!pali.trim()||!meaning.trim())return {error:'needBoth'};if(!f)return {error:'unknownPali'};if(studyState.entries.includes(f.id))return {error:'duplicate'};if(!matchesStudy(meaning,[f.en,f.zh,...f.meaningAliases]))return {error:'wrongMeaning'};return {factor:f};}
@@ -334,6 +350,27 @@ function groupName(g){return language==='zh'?g.zh:g.en;}
 function displayStudyFeedback(){const e=$('studyFeedback');if(!e)return;e.textContent=studyFeedback?t(studyFeedback.key):'';e.className='study-feedback '+(studyFeedback?.error?'wrong':'right');}
 function studyTable(factors,caption){const wrap=node('div','study-table-wrap'),table=node('table','study-table');if(caption)table.append(node('caption','',caption));const head=node('thead'),hr=node('tr');hr.append(node('th','',t('paliLabel')),node('th','',t('meaningLabel')));head.append(hr);table.append(head);const body=node('tbody');for(const f of factors){const row=node('tr'),p=node('td','',f.pali),m=node('td','',`${f.en} · ${f.zh}`);if(studyState.hints.includes(f.id))p.append(node('small','',t('hinted')));row.append(p,m);body.append(row);}table.append(body);wrap.append(table);return wrap;}
 function focusStudy(){const e=$('studyNumber')||$('studyPali')||$('studyContinue')||$('studyStageHeading');e?.focus({preventScroll:true});}
+function visitStudyStage(target){
+  if(!Number.isInteger(target)||target<0||target>cetasikaSteps.length)return;
+  rememberStudyDraft();studyState.stage=target;
+  studyState.draft={...(studyState.drafts[target]||{})};
+  studyState.redoReturnStage=null;studyFeedback=null;
+  saveStudy();renderStudy();focusStudy();
+  $('studyStage').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function jumpStudyGroup(key){
+  const countStage=cetasikaSteps.findIndex(([kind,group])=>kind==='count'&&group===key);
+  const nameStage=cetasikaSteps.findIndex(([kind,group])=>kind==='names'&&group===key);
+  if(countStage<0)return;
+  // Enter the count first when it has not been answered, then recall names.
+  const target=studyState.counts.includes(key)&&nameStage>=0?nameStage:countStage;
+  visitStudyStage(target);
+}
+function nextStudyStage(){
+  for(let i=studyState.stage+1;i<cetasikaSteps.length;i++)if(!stageComplete(cetasikaSteps[i],studyState))return i;
+  for(let i=0;i<=studyState.stage&&i<cetasikaSteps.length;i++)if(!stageComplete(cetasikaSteps[i],studyState))return i;
+  return cetasikaSteps.length;
+}
 function redoStudyGroup(key,fromSummary=false){
   const target=cetasikaSteps.findIndex(([kind,group])=>kind==='names'&&group===key);
   if(target<0)return;
@@ -360,7 +397,12 @@ function renderStudy(){
   $('studyFactorProgress').textContent=`${studyState.entries.length} / 52 ${t('progressWord')}`;
   $('studyProgressFill').style.width=`${studyState.entries.length/52*100}%`;$('studyProgress').setAttribute('aria-valuenow',String(studyState.entries.length));
   $('studyStorageNotice').classList.toggle('hidden',studyStorageAvailable);$('studyOutline').replaceChildren();
-  for(const [key,g] of Object.entries(cetasikaGroups)){const li=node('li','',`${groupName(g)} (${g.pali})`);if(cetasikaSteps[studyState.stage]?.[1]===key)li.setAttribute('aria-current','step');$('studyOutline').append(li);}
+  for(const [key,g] of Object.entries(cetasikaGroups)){
+    const li=node('li'),button=node('button','study-jump',`${groupName(g)} (${g.pali})`);
+    button.type='button';button.id=`jumpGroup-${key}`;
+    if(cetasikaSteps[studyState.stage]?.[1]===key){li.setAttribute('aria-current','step');button.setAttribute('aria-current','step');}
+    button.onclick=()=>jumpStudyGroup(key);li.append(button);$('studyOutline').append(li);
+  }
   const card=node('div','study-card');stage.append(card);
   if(allDone){const h=node('h2','',t('allDone'));h.id='studyStageHeading';h.tabIndex=-1;card.append(h,node('p','',t('doneDescription')));const assisted=studyState.entries.filter(id=>studyState.hints.includes(id)).length;card.append(node('p','study-help',`${t('independent')}: ${52-assisted} · ${t('withHints')}: ${assisted}`));const actions=node('div','study-bottom-actions'),quizButton=node('button','primary',t('beginQuiz'));quizButton.type='button';quizButton.onclick=()=>{leaveStudy(false);topic='cetasika';level='basic';syncTopicLevel();start();};actions.append(quizButton);card.append(actions);for(const [key,g] of Object.entries(cetasikaGroups)){if(!g.first)continue;card.append(node('h3','study-group-title',`${g.count} ${groupName(g)} (${g.pali})`),redoGroupButton(key,true),studyTable(groupFactors(key)));}return;}
   const [kind,key]=cetasikaSteps[studyState.stage],g=cetasikaGroups[key],done=stageComplete(cetasikaSteps[studyState.stage],studyState);
@@ -381,7 +423,7 @@ function renderStudy(){
     if(alreadyHinted)showHint();hintButton.onclick=()=>{if(kind==='count'){if(!studyState.countHints.includes(key))studyState.countHints.push(key);}else{const f=groupFactors(key).find(f=>!studyState.entries.includes(f.id));if(!studyState.hints.includes(f.id))studyState.hints.push(f.id);}saveStudy();renderStudy();focusStudy();};card.append(hintButton,hint);
   }
   if(kind==='names'){const accepted=groupFactors(key).filter(f=>studyState.entries.includes(f.id));if(accepted.length)card.append(studyTable(accepted,t('accepted')));else card.append(node('p','study-help',t('noEntries')));}
-  if(done){const foot=node('div','study-next'),next=node('button','primary',t(studyState.redoReturnStage===cetasikaSteps.length?'returnSummary':'continue'));next.id='studyContinue';next.type='button';next.onclick=()=>{studyState.stage=studyState.redoReturnStage??studyState.stage+1;studyState.redoReturnStage=null;studyState.draft={};studyFeedback=null;saveStudy();renderStudy();$('studyStageHeading').focus({preventScroll:true});$('studyStage').scrollIntoView({behavior:'smooth',block:'start'});};foot.append(next);card.append(foot);}
+  if(done){const foot=node('div','study-next'),next=node('button','primary',t(studyState.redoReturnStage===cetasikaSteps.length?'returnSummary':'continue'));next.id='studyContinue';next.type='button';next.onclick=()=>visitStudyStage(nextStudyStage());foot.append(next);card.append(foot);}
 }
 function syncTopicLevel(){for(const name of ['topic','level'])document.querySelectorAll(`[data-${name}]`).forEach(b=>{const selected=b.dataset[name]===(name==='topic'?topic:level);b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));});}
 function openStudy(){studyReturnFocus=$('reviseCetasika');$('home').classList.add('hidden');$('quiz').classList.add('hidden');$('resultModal').classList.add('hidden');$('revisionModal').classList.add('hidden');$('cetasikaRevision').classList.remove('hidden');studyFeedback=null;saveStudy();renderStudy();window.scrollTo({top:0,behavior:'smooth'});$('studyTitle').tabIndex=-1;$('studyTitle').focus({preventScroll:true});}
