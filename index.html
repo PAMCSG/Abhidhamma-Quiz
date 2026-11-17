@@ -18,6 +18,7 @@
 .study-overview ol li,.study-overview ol li[aria-current=step]{padding:0;border:0;background:transparent}.study-jump{padding:9px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;color:var(--ink);background:#fff;text-align:left}.study-jump:hover{border-color:var(--green);background:#f5f9f4}.study-jump[aria-current=step]{border-color:var(--green);background:#e9f2eb;color:var(--deep)}
 .cetasika-reference-panel{width:min(1040px,100%)}.reference-heading{display:flex;justify-content:space-between;gap:16px;align-items:start}.reference-close{font:28px system-ui,sans-serif;line-height:1;border:1px solid #ccd8cb;border-radius:9px;background:#fff;color:var(--deep);width:40px;height:40px;flex:none}.reference-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.reference-tabs button{border:1px solid #bdcdbf;border-radius:9px;background:#fff;color:var(--deep);padding:10px 16px;font-weight:650}.reference-tabs button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.reference-scroll{padding-top:20px;padding-bottom:26px;overscroll-behavior:contain}.reference-scroll .study-table{table-layout:fixed}.reference-scroll .study-table th:first-child,.reference-scroll .study-table td:first-child{width:46px;color:var(--muted);font:13px system-ui,sans-serif}.reference-scroll .study-table td:nth-child(2){font:italic 19px 'Times New Roman',serif;color:#155CA8;overflow-wrap:anywhere}.reference-scroll .study-table td:nth-child(3),.reference-scroll .study-table td:nth-child(4){font:15px system-ui,sans-serif;color:var(--ink);overflow-wrap:anywhere}.reference-scroll .study-table th:nth-child(2){width:29%}.reference-scroll .study-table th:nth-child(3){width:37%}.reference-group{margin-bottom:30px}.reference-group h3{font:normal 25px Georgia,serif;margin:12px 0 5px;color:var(--deep)}.reference-parent{font-size:12px;letter-spacing:.4px;color:var(--muted);font-weight:650;margin:16px 0 8px}.reference-group .pali-title{margin-bottom:10px;font-size:20px}.reference-scroll .study-table-wrap{margin-top:12px}.reference-source{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px;margin-top:10px}@media(max-width:700px){.cetasika-reference-panel .resulthead{padding-top:18px;padding-bottom:16px}.cetasika-reference-panel .resulthead h2{font-size:27px}.reference-scroll{padding-left:12px;padding-right:12px}.reference-scroll .study-table{table-layout:auto;min-width:520px}.reference-scroll .study-table td:nth-child(2){font-size:18px}.reference-scroll .study-table td:nth-child(3),.reference-scroll .study-table td:nth-child(4){font-size:14px}.reference-group h3{font-size:22px}}
 
+#rupaRevision{margin-top:0}
 </style>
 </head>
 <body>
@@ -30,7 +31,7 @@
   <nav class="revision-links" aria-label="Abhidhamma revision">
     <a href="#revision-citta" id="reviseCitta"><span data-i18n="reviseCittaLabel">Citta</span><small data-i18n="existingNotes">Revision notes →</small></a>
     <a href="#revision-cetasika" id="reviseCetasika" class="active-revision"><span data-i18n="reviseCetasikaLabel">Cetasika</span><small data-i18n="guided52">Guided practice · 52 factors →</small></a>
-    <a href="#revision-rupa" id="reviseRupa"><span data-i18n="reviseRupaLabel">Rūpa</span><small data-i18n="comingNext">Coming next</small></a>
+    <a href="#revision-rupa" id="reviseRupa"><span data-i18n="reviseRupaLabel">Rūpa</span><small data-i18n="rupaAvailable">Guided practice · 28 rūpas →</small></a>
   </nav>
 </section>
 
@@ -49,7 +50,19 @@
   <p class="study-source" data-i18n="studySource">Source: Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020, pp. 2–3. English and Chinese terms follow the bilingual table. Progress is saved on this browser when available.</p>
   <p class="study-source hidden" id="studyStorageNotice" data-i18n="storageUnavailable">This browser cannot save progress. You can continue practising while this page stays open.</p>
 </section>
-<div class="modal hidden" id="rupaRevisionModal" role="dialog" aria-modal="true" aria-labelledby="rupaRevisionTitle"><div class="panel"><div class="resulthead"><div class="eyebrow">RŪPA</div><h2 id="rupaRevisionTitle" data-i18n="rupaTitle">Rūpa revision</h2></div><div class="review"><p data-i18n="rupaPending">Rūpa guided revision is coming next. We are starting with all 52 cetasikas.</p></div><div class="resultactions"><button type="button" class="secondary" id="closeRupa" data-i18n="closeRevision">Close</button></div></div></div>
+<section id="rupaRevision" class="hidden" aria-labelledby="rupaTitle">
+  <div class="study-top"><button type="button" class="secondary" id="rupaHome" data-i18n="rupaStudyHome">← Back to quiz page</button><button type="button" class="text-button" id="rupaReset" data-i18n="rupaStudyReset">Start revision again</button></div>
+  <div class="eyebrow" data-i18n="rupaGuidedRevision">GUIDED REVISION</div>
+  <h1 id="rupaTitle" class="study-heading" data-i18n="rupaStudyTitle">The 28 types of materiality</h1>
+  <p class="study-subtitle" data-i18n="rupaStudyIntro">Revise all 28 rūpas in the 11 categories of your chart. Begin with the counts, then enter each Pāli name with its English or Chinese meaning.</p>
+  <div id="rupaResetConfirm" class="reset-confirm hidden"><p data-i18n="rupaResetPrompt">Clear your saved Rūpa revision and begin again?</p><div class="study-bottom-actions"><button type="button" class="secondary" id="rupaResetCancel" data-i18n="rupaCancel">Cancel</button><button type="button" class="primary" id="rupaResetYes" data-i18n="rupaResetYes">Clear and restart</button></div></div>
+  <div class="study-progress"><div class="topline"><span id="rupaStageProgress"></span><span id="rupaFactorProgress"></span></div><div class="track" role="progressbar" aria-label="Rūpas recalled" aria-valuemin="0" aria-valuemax="28" id="rupaProgress"><div class="fill" id="rupaProgressFill"></div></div></div>
+  <div id="rupaStage"></div>
+  <details class="study-overview" open><summary data-i18n="rupaStudyOutline">Revision sequence</summary><p class="study-help" data-i18n="rupaStudyJumpHelp">Choose a group to start it again from the beginning. Parent groups also restart their subgroups.</p><ol id="rupaOutline"></ol></details>
+  <p class="study-source" data-i18n="rupaStudySource">Source: The Twenty-Eight Types of Materiality (11 categories), your Chinese–English–Pāli chart. English and Chinese terms follow the chart. Progress is saved on this browser when available.</p>
+  <p class="study-source hidden" id="rupaStorageNotice" data-i18n="rupaStorageUnavailable">This browser cannot save progress. You can continue practising while this page stays open.</p>
+</section>
+
 
 <footer data-i18n="footer">Abhidhamma Quiz Practice · A study aid, not a replacement for guidance from a qualified teacher</footer>
 </main>
@@ -60,6 +73,14 @@
     <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="referenceTag">CETASIKA REVISION</div><h2 id="cetasikaReferenceTitle" data-i18n="referenceTitle">Revise the mental factors</h2></div><button type="button" class="reference-close" id="closeCetasikaReference" aria-label="Close revision">×</button></div><p data-i18n="referenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="referenceThisGroup" aria-pressed="true" data-i18n="referenceThisGroup">This group</button><button type="button" id="referenceAllGroups" aria-pressed="false" data-i18n="referenceAllGroups">All 52 cetasikas</button></nav></div>
     <div class="review reference-scroll" id="cetasikaReferenceContent"></div>
     <div class="resultactions"><button type="button" class="primary" id="returnFromCetasikaReference" data-i18n="referenceReturn">Return to practice</button></div>
+  </div>
+</div>
+
+<div class="modal hidden" id="rupaReferenceModal" role="dialog" aria-modal="true" aria-labelledby="rupaReferenceTitle">
+  <div class="panel cetasika-reference-panel">
+    <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="rupaReferenceTag">RŪPA REVISION</div><h2 id="rupaReferenceTitle" data-i18n="rupaReferenceTitle">Revise the materiality chart</h2></div><button type="button" class="reference-close" id="closeRupaReference" aria-label="Close revision">×</button></div><p data-i18n="rupaReferenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="rupaReferenceThisGroup" aria-pressed="true" data-i18n="rupaReferenceThisGroup">This group</button><button type="button" id="rupaReferenceAllGroups" aria-pressed="false" data-i18n="rupaReferenceAllGroups">All 28 rūpas</button></nav></div>
+    <div class="review reference-scroll" id="rupaReferenceContent"></div>
+    <div class="resultactions"><button type="button" class="primary" id="returnFromRupaReference" data-i18n="rupaReferenceReturn">Return to practice</button></div>
   </div>
 </div>
 
@@ -238,7 +259,7 @@ const $=id=>document.getElementById(id);
 document.querySelectorAll('[data-count]').forEach(btn=>btn.addEventListener('click',()=>{count=Number(btn.dataset.count);document.querySelectorAll('[data-count]').forEach(b=>{b.classList.toggle('selected',b===btn);b.setAttribute('aria-pressed',String(b===btn));});}));
 function shuffle(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];}return array;}
 function t(key){return translations[language][key];}
-function updateLanguage(){document.documentElement.lang=language==='zh'?'zh-Hans':'en';document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===language)));document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));document.querySelectorAll('[data-count]').forEach(el=>el.textContent=`${el.dataset.count} ${t('counts')}`);document.querySelectorAll('[data-topic]').forEach(el=>{const citta=el.dataset.topic==='citta';el.textContent=language==='zh'?(citta?'1 · 心（Citta）':'2 · 心所（Cetasika）'):(citta?'1 · Citta':'2 · Cetasika');});document.querySelectorAll('[data-level]').forEach(el=>el.textContent=t(el.dataset.level));$('start').textContent=t('start');$('previous').textContent=t('back');$('retry').textContent=t('retry');$('closeReview').textContent=t('close');$('reviseBefore').textContent=t('revise');$('reviseAfter').textContent=t('revise');if(questions.length){render();if(!$('resultModal').classList.contains('hidden'))finish();}if(!$('revisionModal').classList.contains('hidden'))renderRevision();if(!$('cetasikaRevision').classList.contains('hidden'))renderStudy();if(!$('cetasikaReferenceModal').classList.contains('hidden'))renderCetasikaReference();}
+function updateLanguage(){document.documentElement.lang=language==='zh'?'zh-Hans':'en';document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===language)));document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));document.querySelectorAll('[data-count]').forEach(el=>el.textContent=`${el.dataset.count} ${t('counts')}`);document.querySelectorAll('[data-topic]').forEach(el=>{const citta=el.dataset.topic==='citta';el.textContent=language==='zh'?(citta?'1 · 心（Citta）':'2 · 心所（Cetasika）'):(citta?'1 · Citta':'2 · Cetasika');});document.querySelectorAll('[data-level]').forEach(el=>el.textContent=t(el.dataset.level));$('start').textContent=t('start');$('previous').textContent=t('back');$('retry').textContent=t('retry');$('closeReview').textContent=t('close');$('reviseBefore').textContent=t('revise');$('reviseAfter').textContent=t('revise');if(questions.length){render();if(!$('resultModal').classList.contains('hidden'))finish();}if(!$('revisionModal').classList.contains('hidden'))renderRevision();if(!$('cetasikaRevision').classList.contains('hidden'))renderStudy();if(!$('cetasikaReferenceModal').classList.contains('hidden'))renderCetasikaReference();if(!$('rupaRevision').classList.contains('hidden'))renderRupa();if(!$('rupaReferenceModal').classList.contains('hidden'))renderRupaReference();}
 function start(){const pool=level==='basic'?basicPool(topic):makeAdvanced(topic);questions=shuffle(pool).slice(0,count);answers=Array(questions.length).fill(null);index=0;$('revisionModal').classList.add('hidden');$('resultModal').classList.add('hidden');$('home').classList.add('hidden');$('quiz').classList.remove('hidden');render();window.scrollTo({top:0,behavior:'smooth'});}
 function renderRevision(){const revisionTopic=revisionTopicOverride||topic;const entries=revisionNotes[revisionTopic][level];$('revisionTag').textContent=`${revisionTopic==='citta'?(language==='zh'?'1 · 心（Citta）':'1 · Citta'):(language==='zh'?'2 · 心所（Cetasika）':'2 · Cetasika')} · ${t(level)}`;$('revisionTitle').textContent=t('revisionTitle');$('revisionIntro').textContent=revisionTopic==='cetasika'?t('referenceSource'):t('revisionIntro');$('revisionContent').replaceChildren();entries.forEach(([title,en,zh])=>{const card=document.createElement('article');card.className='revision-card';const heading=document.createElement('h3');const [englishTitle,chineseTitle]=title.split(' / ');heading.textContent=language==='zh'?chineseTitle:englishTitle;const p=document.createElement('p');p.textContent=language==='zh'?zh:en;card.append(heading,p);$('revisionContent').append(card);});const source=document.createElement('p');source.className='revision-source';source.textContent=language==='zh'?(revisionTopic==='citta'?'资料来源：2016年阿毗达摩课程第一部分——心（Citta）。':'资料来源：Ven Sugatavaṃsa，2020年8月15日《Revision on Mental Factors (Cetasika)》。'):(revisionTopic==='citta'?'Source: 2016 Abhidhamma Course, Part 1 — Consciousness (Citta).':'Source: Revision on Mental Factors (Cetasika), Ven Sugatavaṃsa, 15 Aug 2020.');$('revisionContent').append(source);$('closeRevision').textContent=revisionFromResults?t('reviewAnswers'):t('closeRevision');$('revisionAction').textContent=revisionFromResults?t('retry'):t('startFromRevision');}
 function showRevision(fromResults){revisionFromResults=fromResults;renderRevision();$('revisionModal').classList.remove('hidden');$('revisionContent').scrollTop=0;$('closeRevision').focus();}
@@ -1073,8 +1094,6 @@ function openStudy(){studyReturnFocus=$('reviseCetasika');$('home').classList.ad
 function leaveStudy(focus=true){$('cetasikaRevision').classList.add('hidden');$('studyResetConfirm').classList.add('hidden');$('home').classList.remove('hidden');if(focus)studyReturnFocus?.focus();}
 $('reviseCetasika').onclick=e=>{e.preventDefault();openStudy();};
 $('reviseCitta').onclick=e=>{e.preventDefault();revisionTopicOverride='citta';showRevision(false);};
-$('reviseRupa').onclick=e=>{e.preventDefault();$('rupaRevisionModal').classList.remove('hidden');$('closeRupa').focus();};
-$('closeRupa').onclick=()=>{$('rupaRevisionModal').classList.add('hidden');$('reviseRupa').focus();};
 $('studyHome').onclick=()=>leaveStudy();
 $('studyReset').onclick=()=>{$('studyResetConfirm').classList.remove('hidden');$('studyResetCancel').focus();};
 $('studyResetCancel').onclick=()=>{$('studyResetConfirm').classList.add('hidden');$('studyReset').focus();};
@@ -1125,8 +1144,249 @@ $('referenceThisGroup').onclick=()=>{cetasikaReference.all=false;rememberReferen
 $('referenceAllGroups').onclick=()=>{cetasikaReference.all=true;rememberReferenceViewed();renderCetasikaReference();$('cetasikaReferenceContent').scrollTop=0;};
 $('cetasikaReferenceModal').onclick=e=>{if(e.target===$('cetasikaReferenceModal'))closeCetasikaReference();};
 
+const rupaFactors=[
+['Pathavīdhātu','Earth-element','地界',[],['earth element']],
+['Āpodhātu','Water-element','水界',[],[]],
+['Tejodhātu','Fire-element','火界',[],[]],
+['Vāyodhātu','Wind-element','风界',[],['air element','風界']],
+['Cakkhupasāda','Eye Translucency','眼净色',[],['眼淨色']],
+['Sotapasāda','Ear Translucency','耳净色',[],['耳淨色']],
+['Ghānapasāda','Nose Translucency','鼻净色',[],['鼻淨色']],
+['Jivhāpasāda','Tongue Translucency','舌净色',[],['舌淨色']],
+['Kāyapasāda','Body Translucency','身净色',[],['身淨色']],
+['Vaṇṇa','Colour','颜色',[],['color','顏色']],
+['Sadda','Sound','声音',[],['聲音']],
+['Gandha','Smell','香(气味)',[],['香','气味','氣味']],
+['Rasa','Taste','味道',[],[]],
+['Purisabhāvarūpa','Male Sex-Materiality','男性根色',[],[]],
+['Itthibhāvarūpa','Female Sex-Materiality','女性根色',[],[]],
+['Hadayavatthu','Heart-base','心所依处',[],['心所依處']],
+['Jīvitindriya','Life-faculty','命根色',[],['命根']],
+['Kabaḷīkāra āhāra / Ojā','Edible Food/Nutritive Essence','抟食/食素',['Kabaḷīkāra āhāra','Ojā'],['Edible Food','Nutritive Essence','抟食','摶食','食素']],
+['Ākāsadhātu','Space-Element','空界',[],[]],
+['Kāyaviññatti','Bodily Intimation','身表',[],[]],
+['Vacīviññatti','Verbal Intimation','语表',[],['Vebal Intimation','語表']],
+['Lahutā','Lightness','轻快性',['Rūpassa lahutā'],['輕快性']],
+['Mudutā','Softness','柔软性',['Rūpassa mudutā'],['柔軟性']],
+['Kammaññatā','Wieldiness','适业性',['Rūpassa kammaññatā'],['適業性']],
+['Upacaya','Generation','色积聚',[],['色積聚']],
+['Santati','Continuity','色相续性',[],['色相續性']],
+['Jaratā','Ageing','色老性',[],['aging']],
+['Aniccatā','Impermanence','色无常性',[],['色無常性']]
+].map(([pali,en,zh,paliAliases,meaningAliases],i)=>({id:i+1,pali,en,zh,paliAliases,meaningAliases:[...meaningAliases,...en.split('/'),...zh.split('/')]}));
+const rupaGroups={
+total:{en:'Types of Materiality',zh:'色法',pali:'Rūpa',count:28},
+great:{en:'Great Essentials',zh:'四大种',pali:'Mahābhūta',count:4,first:1,last:4,category:1},
+derived:{en:'Derived Materiality',zh:'所造色',pali:'Upādāya-rūpa',count:24},
+concreteDerived:{en:'Concrete Derived Materiality',zh:'完成所造色',pali:'Nipphanna upādāyarūpa',count:14,parent:'derived'},
+sensitive:{en:'Sensitive Materiality',zh:'净色',pali:'Pasādarūpa',count:5,first:5,last:9,parent:'concreteDerived',category:2},
+objective:{en:'Objective Materiality',zh:'境色',pali:'Gocararūpa',count:4,first:10,last:13,parent:'concreteDerived',category:3},
+sex:{en:'Sex Materiality',zh:'性根色',pali:'Bhāvarūpa',count:2,first:14,last:15,parent:'concreteDerived',category:4},
+heart:{en:'Heart-Materiality',zh:'心色',pali:'Hadayarūpa',count:1,first:16,last:16,parent:'concreteDerived',category:5},
+life:{en:'Life-Materiality',zh:'命色',pali:'Jīvitarūpa',count:1,first:17,last:17,parent:'concreteDerived',category:6},
+nutriment:{en:'Nutriment-Materiality',zh:'食色',pali:'Āhārarūpa',count:1,first:18,last:18,parent:'concreteDerived',category:7},
+unconcrete:{en:'Unconcrete Materiality',zh:'非完成色',pali:'Anipphanna rūpa',count:10,parent:'derived'},
+delimiting:{en:'Delimiting Materiality',zh:'限制色',pali:'Paricchedarūpa',count:1,first:19,last:19,parent:'unconcrete',category:8},
+intimating:{en:'Intimating Materiality',zh:'表色',pali:'Viññattirūpa',count:2,first:20,last:21,parent:'unconcrete',category:9},
+mutable:{en:'Change/Mutable Materiality',zh:'变化色',pali:'Vikārarūpa',count:3,first:22,last:24,parent:'unconcrete',category:10},
+characteristic:{en:'Characteristic Materiality',zh:'相色',pali:'Lakkhaṇarūpa',count:4,first:25,last:28,parent:'unconcrete',category:11}
+};
+const rupaSteps=[];
+for(const [key,g] of Object.entries(rupaGroups)){rupaSteps.push(['count',key]);if(g.first)rupaSteps.push(['names',key]);}
+const rupaStorageKey='abhidhammaRupaRevisionV1';
+const rupaMessages={
+en:{entryHelp:'Use any order within this group. Pāli accents, spaces and hyphens are optional. Enter the Pāli name and the English or Chinese meaning of the same type of materiality.',completedGroup:'All rūpas in this group are correct. Continue to the next group.',groupRestarted:'This group is ready to practise again. Enter each rūpa from memory.',studyTitle:'The 28 types of materiality',studyIntro:'Revise all 28 rūpas in the 11 categories of your chart. Begin with the counts, then enter each Pāli name with its English or Chinese meaning.',studySource:'Source: The Twenty-Eight Types of Materiality (11 categories), your Chinese–English–Pāli chart. English and Chinese terms follow the chart. Progress is saved on this browser when available.',resetPrompt:'Clear your saved Rūpa revision and begin again?',allDone:'You have revised all 28 rūpas!',doneDescription:'You have completed the counts and entered every numbered type of materiality from all 11 categories.',totalQuestion:'How many types of materiality (rūpa) are there in total?',returnSummary:'Return to all 28 →',referenceTag:'RŪPA REVISION',referenceTitle:'Revise the materiality chart',referenceAllGroups:'All 28 rūpas',referenceIntro:'Read the Pāli, English and Chinese table, then close this popup and recall each rūpa from memory.',referenceSource:'Source: The Twenty-Eight Types of Materiality (11 categories), Chinese–English–Pāli chart.',objectiveCount:'How many objective types are separately numbered in the chart, excluding touch?',mutableCount:'Excluding the two intimations, how many mutable qualities are listed?',greatNote:'The four Great Essentials are the four underived concrete types of materiality in the chart.',objectiveNote:'Touch (phoṭṭhabba) consists of earth, fire and wind. These are already counted among the Great Essentials. Enter only the four separately numbered objective types here: colour, sound, smell and taste.',mutableNote:'The chart adds the two intimations to the three mutable qualities (3 + 2 = 5). Enter only lightness, softness and wieldiness here; bodily and verbal intimation are practised in their own group and counted once.',overview:'28 = 4 Great Essentials + 24 derived types. The derived types comprise 14 concrete and 10 unconcrete types. The 11 numbered categories cover each rūpa once.',available:'Guided practice · 28 rūpas →'},
+zh:{entryHelp:'本组内可按任意顺序输入。巴利语可省略变音符号、空格及连字符。两栏必须对应同一种色法。',completedGroup:'本组色法已全部答对，请继续下一组。',groupRestarted:'本组已重新开始，请凭记忆逐一输入色法。',studyTitle:'二十八种色法',studyIntro:'依据您的色法表，复习十一类、二十八种色法。先回答数量，再逐一输入巴利语名称及其英文或中文含义。',studySource:'资料来源：您提供的《二十八种色法表（十一类）》中英巴利语图表。英文与中文术语依照该图表。浏览器允许时会保存进度。',resetPrompt:'清除已保存的色法复习进度，并重新开始吗？',allDone:'您已完成二十八种色法的复习！',doneDescription:'您已答完数量，并输入十一类中每一种有编号的色法及其含义。',totalQuestion:'色法（rūpa）一共有多少种？',returnSummary:'返回二十八色法总表 →',referenceTag:'色法复习',referenceTitle:'复习二十八色法表',referenceAllGroups:'全部二十八色法',referenceIntro:'先阅读巴利语、英文及中文对照表，再关闭弹窗，凭记忆逐一输入色法。',referenceSource:'资料来源：您提供的《二十八种色法表（十一类）》中英巴利语图表。',objectiveCount:'不重复计算触，表中另有编号的境色有多少种？',mutableCount:'不包括两种表色，表中列出的变化色特性有多少种？',greatNote:'四大种即图表所列的四种非所造的完成色。',objectiveNote:'触（phoṭṭhabba）包括地、火、风，三者已计入四大种，不重复计数。本组只输入另有编号的四种境色：颜色、声音、香（气味）、味道。',mutableNote:'图表在三种变化色特性之外加上两种表色（3＋2＝5）。本组只输入轻快性、柔软性及适业性；身表与语表在表色组中练习，只计一次。',overview:'28＝4大种＋24所造色；24所造色＝14完成所造色＋10非完成色。十一类有编号的项目各计一次。',available:'引导练习 · 28色法 →'}
+};
+function rt(key){return rupaMessages[language][key]??t(key);}
+for(const lang of ['en','zh'])for(const [key,value] of Object.entries({...translations[lang],...rupaMessages[lang]}))translations[lang]['rupa'+key[0].toUpperCase()+key.slice(1)]=value;
+
+function newRupa(){return {version:1,stage:0,counts:[],entries:[],hints:[],countHints:[],draft:{},drafts:{},redoReturnStage:null};}
+function rupaGroupFactors(key){const g=rupaGroups[key];return rupaFactors.filter(f=>f.id>=g.first&&f.id<=g.last);}
+function rupaStageComplete(step,state){const [kind,key]=step;return kind==='count'?state.counts.includes(key):rupaGroupFactors(key).every(f=>state.entries.includes(f.id));}
+function cleanRupaDraft(raw){return raw&&typeof raw==='object'?Object.fromEntries(['number','pali','meaning'].map(k=>[k,typeof raw[k]==='string'?raw[k].slice(0,200):''])):{};}
+function restoreRupa(){
+  try{
+    const raw=JSON.parse(readLocal(rupaStorageKey));if(!raw||raw.version!==1)return newRupa();
+    const state=newRupa();state.stage=Number.isInteger(raw.stage)?Math.max(0,Math.min(rupaSteps.length,raw.stage)):0;
+    for(const key of ['entries','hints'])state[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>Number.isInteger(id)&&id>=1&&id<=28))]:[];
+    for(const key of ['counts','countHints'])state[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>Object.hasOwn(rupaGroups,id)))]:[];
+    state.draft=cleanRupaDraft(raw.draft);
+    if(raw.drafts&&typeof raw.drafts==='object')for(let i=0;i<rupaSteps.length;i++)if(Object.hasOwn(raw.drafts,String(i)))state.drafts[i]=cleanRupaDraft(raw.drafts[i]);
+    // Direct group selection may leave earlier steps unfinished.
+    if(state.stage===rupaSteps.length&&!rupaSteps.every(step=>rupaStageComplete(step,state))){state.stage=rupaSteps.findIndex(step=>!rupaStageComplete(step,state));state.draft=state.drafts[state.stage]||{};}
+    if(raw.redoReturnStage===rupaSteps.length&&rupaSteps[state.stage]?.[0]==='names')state.redoReturnStage=raw.redoReturnStage;
+    return state;
+  }catch{return newRupa();}
+}
+let rupaState=restoreRupa(),rupaStorageAvailable=true,rupaFeedback=null;
+function rememberRupaDraft(){if(rupaState.stage<rupaSteps.length)rupaState.drafts[rupaState.stage]={...rupaState.draft};}
+function saveRupa(){rememberRupaDraft();rupaStorageAvailable=writeLocal(rupaStorageKey,JSON.stringify(rupaState));$('rupaStorageNotice').classList.toggle('hidden',rupaStorageAvailable);}
+function normalizeRupa(value){return value.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[\s\p{P}\p{S}]/gu,'');}
+function matchesRupa(value,alternatives){const n=normalizeRupa(value);return !!n&&alternatives.some(v=>normalizeRupa(v)===n);}
+function findRupaPair(pali,meaning,key){const factors=rupaGroupFactors(key),f=factors.find(f=>matchesRupa(pali,[f.pali,...f.paliAliases]));if(!pali.trim()||!meaning.trim())return {error:'needBoth'};if(!f)return {error:'unknownPali'};if(rupaState.entries.includes(f.id))return {error:'duplicate'};if(!matchesRupa(meaning,[f.en,f.zh,...f.meaningAliases]))return {error:'wrongMeaning'};return {factor:f};}
+function rupaNode(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
+function rupaGroupName(g){return language==='zh'?g.zh:g.en;}
+function displayRupaFeedback(){const e=$('rupaFeedback');if(!e)return;e.textContent=rupaFeedback?rt(rupaFeedback.key):'';e.className='study-feedback '+(rupaFeedback?.error?'wrong':'right');}
+function rupaTable(factors,caption){const wrap=rupaNode('div','study-table-wrap'),table=rupaNode('table','study-table accepted-pairs');if(caption)table.append(rupaNode('caption','',caption));const head=rupaNode('thead'),hr=rupaNode('tr');for(const label of [rt('paliLabel'),rt('englishLabel'),rt('chineseLabel')]){const th=rupaNode('th','',label);th.setAttribute('scope','col');hr.append(th);}head.append(hr);table.append(head);const body=rupaNode('tbody');for(const f of factors){const row=rupaNode('tr'),p=rupaNode('td','',f.pali);if(rupaState.hints.includes(f.id))p.append(rupaNode('small','',rt('hinted')));row.append(p,rupaNode('td','',f.en),rupaNode('td','',f.zh));body.append(row);}table.append(body);wrap.append(table);return wrap;}
+function focusRupa(){const e=$('rupaNumber')||$('rupaPali')||$('rupaContinue')||$('rupaStageHeading');e?.focus({preventScroll:true});}
+function visitRupaStage(target){
+  if(!Number.isInteger(target)||target<0||target>rupaSteps.length)return;
+  rememberRupaDraft();rupaState.stage=target;
+  rupaState.draft={...(rupaState.drafts[target]||{})};
+  rupaState.redoReturnStage=null;rupaFeedback=null;
+  saveRupa();renderRupa();focusRupa();
+  $('rupaStage').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function jumpRupaGroup(key){
+  const countStage=rupaSteps.findIndex(([kind,group])=>kind==='count'&&group===key);
+  if(countStage<0)return;
+  rememberRupaDraft();
+  // Selecting a parent includes its children; the total restarts the full lesson.
+  const groups=new Set(key==='total'?Object.keys(rupaGroups):[key]);
+  for(let changed=true;changed;){changed=false;for(const [child,g] of Object.entries(rupaGroups))if(g.parent&&groups.has(g.parent)&&!groups.has(child)){groups.add(child);changed=true;}}
+  const factorIds=new Set([...groups].flatMap(group=>rupaGroupFactors(group).map(f=>f.id)));
+  rupaState.counts=rupaState.counts.filter(group=>!groups.has(group));
+  rupaState.countHints=rupaState.countHints.filter(group=>!groups.has(group));
+  rupaState.entries=rupaState.entries.filter(id=>!factorIds.has(id));
+  rupaState.hints=rupaState.hints.filter(id=>!factorIds.has(id));
+  rupaSteps.forEach(([,group],stage)=>{if(groups.has(group))delete rupaState.drafts[stage];});
+  rupaState.stage=countStage;rupaState.draft={};rupaState.redoReturnStage=null;rupaFeedback=null;
+  saveRupa();renderRupa();focusRupa();
+  $('rupaStage').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function nextRupaStage(){
+  for(let i=rupaState.stage+1;i<rupaSteps.length;i++)if(!rupaStageComplete(rupaSteps[i],rupaState))return i;
+  for(let i=0;i<=rupaState.stage&&i<rupaSteps.length;i++)if(!rupaStageComplete(rupaSteps[i],rupaState))return i;
+  return rupaSteps.length;
+}
+function redoRupaGroup(key,fromSummary=false){
+  const target=rupaSteps.findIndex(([kind,group])=>kind==='names'&&group===key);
+  if(target<0)return;
+  const groupIds=new Set(rupaGroupFactors(key).map(f=>f.id));
+  const returnToSummary=fromSummary||rupaState.redoReturnStage===rupaSteps.length;
+  rupaState.entries=rupaState.entries.filter(id=>!groupIds.has(id));
+  rupaState.hints=rupaState.hints.filter(id=>!groupIds.has(id));
+  rupaState.stage=target;
+  rupaState.redoReturnStage=returnToSummary?rupaSteps.length:null;
+  rupaState.draft={};rupaFeedback={key:'groupRestarted'};
+  saveRupa();renderRupa();focusRupa();
+  $('rupaStage').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function redoRupaButton(key,fromSummary=false){
+  const button=rupaNode('button','secondary',rt('redoGroup'));
+  button.type='button';button.id=`redoRupaGroup-${key}`;
+  button.setAttribute('aria-label',`${rt('redoGroup')}: ${rupaGroupName(rupaGroups[key])}`);
+  button.onclick=()=>redoRupaGroup(key,fromSummary);
+  return button;
+}
+function renderRupa(){
+  const allDone=rupaState.stage===rupaSteps.length,stage=$('rupaStage');stage.replaceChildren();
+  $('rupaStageProgress').textContent=allDone?rt('complete'):`${rt('stepWord')} ${rupaState.stage+1} ${rt('ofWord')} ${rupaSteps.length}`;
+  $('rupaFactorProgress').textContent=`${rupaState.entries.length} / 28 ${rt('progressWord')}`;
+  $('rupaProgressFill').style.width=`${rupaState.entries.length/28*100}%`;$('rupaProgress').setAttribute('aria-valuenow',String(rupaState.entries.length));
+  $('rupaStorageNotice').classList.toggle('hidden',rupaStorageAvailable);$('rupaOutline').replaceChildren();
+  for(const [key,g] of Object.entries(rupaGroups)){
+    const li=rupaNode('li'),button=rupaNode('button','study-jump',`${rupaGroupName(g)} (${g.pali})`);
+    button.type='button';button.id=`jumpRupaGroup-${key}`;
+    if(rupaSteps[rupaState.stage]?.[1]===key){li.setAttribute('aria-current','step');button.setAttribute('aria-current','step');}
+    button.onclick=()=>jumpRupaGroup(key);li.append(button);$('rupaOutline').append(li);
+  }
+  const card=rupaNode('div','study-card');stage.append(card);
+  if(allDone){const h=rupaNode('h2','',rt('allDone'));h.id='rupaStageHeading';h.tabIndex=-1;card.append(h,rupaNode('p','',rt('doneDescription')));const assisted=rupaState.entries.filter(id=>rupaState.hints.includes(id)).length;card.append(rupaNode('p','study-help',`${rt('independent')}: ${28-assisted} · ${rt('withHints')}: ${assisted}`));const actions=rupaNode('div','study-bottom-actions'),homeButton=rupaNode('button','primary',rt('studyHome'));homeButton.type='button';homeButton.onclick=()=>closeRupaStudy();actions.append(homeButton);card.append(actions);for(const [key,g] of Object.entries(rupaGroups)){if(!g.first)continue;card.append(rupaNode('h3','study-group-title',`${g.count} ${rupaGroupName(g)} (${g.pali})`),redoRupaButton(key,true),rupaTable(rupaGroupFactors(key)));}return;}
+  const [kind,key]=rupaSteps[rupaState.stage],g=rupaGroups[key],done=rupaStageComplete(rupaSteps[rupaState.stage],rupaState);
+  card.append(rupaNode('div','eyebrow',g.parent?`${rupaGroupName(rupaGroups[g.parent])} · ${rupaGroups[g.parent].pali}`:'RŪPA'));
+  const heading=rupaNode('h2','',kind==='count'?(key==='total'?rt('totalQuestion'):(language==='zh'?`${g.zh}有多少种？`:`How many ${g.en.toLowerCase()} are there?`)):`${g.count} ${rupaGroupName(g)} — ${rt('namesQuestion')}`);heading.id='rupaStageHeading';heading.tabIndex=-1;card.append(heading,rupaNode('p','pali-title',g.pali));
+  if(kind==='count'&&key==='objective')heading.textContent=rt('objectiveCount');
+  if(kind==='count'&&key==='mutable')heading.textContent=rt('mutableCount');
+  if(kind==='names'&&['great','objective','mutable'].includes(key))card.append(rupaNode('p','study-hint',rt(key+'Note')));
+  if(kind==='names'){const repeat=rupaNode('div','study-repeat');repeat.append(redoRupaButton(key),rupaNode('span','study-help',rt('redoGroupHelp')));card.append(repeat);}
+  const form=rupaNode('form',kind==='count'?'count-answer':'pair-answer');form.autocomplete='off';
+  function field(id,label,type,placeholder,value){const wrap=rupaNode('div','study-field'),l=rupaNode('label','',label),input=rupaNode('input');l.htmlFor=id;input.id=id;input.name=id;input.type=type;input.placeholder=placeholder||'';input.value=value||'';input.maxLength=150;input.autocapitalize='none';input.spellcheck=false;input.setAttribute('aria-describedby','rupaFeedback');wrap.append(l,input);return {wrap,input};}
+  if(!done&&kind==='count'){
+    const f=field('rupaNumber',rt('numberLabel'),'text','',rupaState.draft.number);f.input.inputMode='numeric';f.input.setAttribute('pattern','[0-9０-９]+');f.input.setAttribute('aria-label',heading.textContent);f.input.oninput=()=>{rupaState.draft.number=f.input.value;f.input.removeAttribute('aria-invalid');saveRupa();};const check=rupaNode('button','primary',rt('checkCount'));check.type='submit';form.append(f.wrap,check);form.onsubmit=e=>{e.preventDefault();const raw=f.input.value.normalize('NFKC').trim();if(/^\d+$/.test(raw)&&Number(raw)===g.count){rupaState.counts.push(key);rupaState.draft={};rupaFeedback={key:'countCorrect'};saveRupa();renderRupa();$('rupaContinue').focus({preventScroll:true});}else{rupaFeedback={key:'wrongCount',error:true};displayRupaFeedback();f.input.setAttribute('aria-invalid','true');f.input.focus();}};card.append(form);
+  }else if(!done){
+    card.append(rupaNode('p','study-help',rt('entryHelp')));const fields=rupaNode('div','pair-fields'),p=field('rupaPali',rt('paliLabel'),'text',rt('paliPlaceholder'),rupaState.draft.pali),m=field('rupaMeaning',rt('meaningLabel'),'text',rt('meaningPlaceholder'),rupaState.draft.meaning);fields.append(p.wrap,m.wrap);form.append(fields);for(const [name,f] of [['pali',p],['meaning',m]])f.input.oninput=()=>{rupaState.draft[name]=f.input.value;f.input.removeAttribute('aria-invalid');saveRupa();};const controls=rupaNode('div','pair-submit'),check=rupaNode('button','primary',rt('checkPair'));check.type='submit';controls.append(rupaNode('span','study-help',`${rt('accepted')}: ${rupaGroupFactors(key).filter(f=>rupaState.entries.includes(f.id)).length} / ${g.count}`),check);form.append(controls);form.onsubmit=e=>{e.preventDefault();const result=findRupaPair(p.input.value,m.input.value,key);if(result.error){rupaFeedback={key:result.error,error:true};displayRupaFeedback();const target=result.error==='wrongMeaning'?m.input:p.input;target.setAttribute('aria-invalid','true');target.focus();return;}rupaState.entries.push(result.factor.id);rupaState.draft={};rupaFeedback={key:'added'};saveRupa();renderRupa();focusRupa();};card.append(form);
+  }
+  const feedback=rupaNode('p','study-feedback');feedback.id='rupaFeedback';feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');card.append(feedback);displayRupaFeedback();
+  if(done){if(kind==='count')card.append(rupaNode('p','right',`${rt('countCorrect')} ${g.count} ${rupaGroupName(g)} (${g.pali})`));else card.append(rupaNode('p','right',rt('completedGroup')));}
+  else if(kind==='count'){
+    const hintButton=rupaNode('button','text-button',rt('countHint'));hintButton.type='button';
+    const hint=rupaNode('div','study-hint hidden');hint.setAttribute('role','status');
+    if(rupaState.countHints.includes(key)){hint.classList.remove('hidden');hint.textContent=`${rt('numberLabel')}: ${g.count}`;}
+    hintButton.onclick=()=>{if(!rupaState.countHints.includes(key))rupaState.countHints.push(key);saveRupa();renderRupa();focusRupa();};card.append(hintButton,hint);
+  }
+  if(kind==='names'){
+    const revise=rupaNode('button','text-button',rt('reviseGroupTable'));revise.id='reviseRupaTable';revise.type='button';revise.onclick=()=>showRupaReference(key);card.append(revise);
+  }
+  if(kind==='names'){const accepted=rupaGroupFactors(key).filter(f=>rupaState.entries.includes(f.id));if(accepted.length)card.append(rupaTable(accepted,rt('accepted')));else card.append(rupaNode('p','study-help',rt('noEntries')));}
+  if(done){const foot=rupaNode('div','study-next'),next=rupaNode('button','primary',rt(rupaState.redoReturnStage===rupaSteps.length?'returnSummary':'continue'));next.id='rupaContinue';next.type='button';next.onclick=()=>visitRupaStage(nextRupaStage());foot.append(next);card.append(foot);}
+}
+
+let rupaReference={group:'great',all:false},rupaReferencePreviousOverflow='';
+function rupaReferenceLeafKeys(group){
+  const included=new Set(group==='total'?Object.keys(rupaGroups):[group]);
+  for(let changed=true;changed;){changed=false;for(const [key,g] of Object.entries(rupaGroups))if(g.parent&&included.has(g.parent)&&!included.has(key)){included.add(key);changed=true;}}
+  return Object.keys(rupaGroups).filter(key=>included.has(key)&&rupaGroups[key].first);
+}
+function shownRupaReferenceKeys(){return rupaReferenceLeafKeys(rupaReference.all?'total':rupaReference.group);}
+function rememberRupaReferenceViewed(){
+  for(const key of shownRupaReferenceKeys())for(const f of rupaGroupFactors(key))if(!rupaState.entries.includes(f.id)&&!rupaState.hints.includes(f.id))rupaState.hints.push(f.id);
+  saveRupa();
+}
+function rupaReferenceTable(factors){
+  const wrap=rupaNode('div','study-table-wrap'),table=rupaNode('table','study-table');
+  const head=rupaNode('thead'),tr=rupaNode('tr');
+  for(const label of ['#',rt('paliLabel'),'English','中文']){const th=rupaNode('th','',label);th.setAttribute('scope','col');tr.append(th);}head.append(tr);table.append(head);
+  const body=rupaNode('tbody');for(const f of factors){const row=rupaNode('tr');row.append(rupaNode('td','',String(f.id)),rupaNode('td','',f.pali),rupaNode('td','',f.en),rupaNode('td','',f.zh));body.append(row);}table.append(body);wrap.append(table);return wrap;
+}
+function renderRupaReference(){
+  $('rupaReferenceTitle').textContent=rt('referenceTitle');
+  $('closeRupaReference').setAttribute('aria-label',rt('referenceClose'));
+  $('rupaReferenceThisGroup').setAttribute('aria-pressed',String(!rupaReference.all));
+  $('rupaReferenceAllGroups').setAttribute('aria-pressed',String(rupaReference.all));
+  const content=$('rupaReferenceContent');content.replaceChildren();let previousParent=null;
+  for(const key of shownRupaReferenceKeys()){
+    const g=rupaGroups[key],section=rupaNode('section','reference-group');
+    if(g.parent&&g.parent!==previousParent){const parent=rupaGroups[g.parent];section.append(rupaNode('div','reference-parent',`${parent.count} ${parent.en} · ${parent.zh} (${parent.pali})`));}
+    previousParent=g.parent||null;
+    section.append(rupaNode('h3','',`${g.count} ${g.en} · ${g.zh}`),rupaNode('p','pali-title',g.pali),rupaReferenceTable(rupaGroupFactors(key)));if(['great','objective','mutable'].includes(key))section.append(rupaNode('p','study-hint',rt(key+'Note')));content.append(section);
+  }
+  content.append(rupaNode('p','study-help',rt('overview')),rupaNode('p','reference-source',rt('referenceSource')));
+}
+function showRupaReference(group){
+  rupaReference={group,all:false};rememberRupaReferenceViewed();renderRupaReference();
+  rupaReferencePreviousOverflow=document.body.style.overflow||'';document.body.style.overflow='hidden';
+  $('rupaReferenceModal').classList.remove('hidden');$('rupaReferenceContent').scrollTop=0;$('closeRupaReference').focus();
+}
+function closeRupaReference(){
+  $('rupaReferenceModal').classList.add('hidden');document.body.style.overflow=rupaReferencePreviousOverflow;
+  ($('reviseRupaTable')||$('rupaPali')||$('rupaStageHeading')).focus({preventScroll:true});
+}
+$('closeRupaReference').onclick=closeRupaReference;
+$('returnFromRupaReference').onclick=closeRupaReference;
+$('rupaReferenceThisGroup').onclick=()=>{rupaReference.all=false;rememberRupaReferenceViewed();renderRupaReference();$('rupaReferenceContent').scrollTop=0;};
+$('rupaReferenceAllGroups').onclick=()=>{rupaReference.all=true;rememberRupaReferenceViewed();renderRupaReference();$('rupaReferenceContent').scrollTop=0;};
+$('rupaReferenceModal').onclick=e=>{if(e.target===$('rupaReferenceModal'))closeRupaReference();};
+
+
+
+function openRupaStudy(){
+  $('home').classList.add('hidden');$('quiz').classList.add('hidden');$('cetasikaRevision').classList.add('hidden');
+  $('resultModal').classList.add('hidden');$('revisionModal').classList.add('hidden');$('rupaRevision').classList.remove('hidden');
+  rupaFeedback=null;saveRupa();renderRupa();window.scrollTo({top:0,behavior:'smooth'});$('rupaTitle').tabIndex=-1;$('rupaTitle').focus({preventScroll:true});
+}
+function closeRupaStudy(){
+  $('rupaRevision').classList.add('hidden');$('rupaResetConfirm').classList.add('hidden');$('home').classList.remove('hidden');$('reviseRupa').focus();
+}
+$('reviseRupa').onclick=e=>{e.preventDefault();openRupaStudy();};
+$('rupaHome').onclick=closeRupaStudy;
+$('rupaReset').onclick=()=>{$('rupaResetConfirm').classList.remove('hidden');$('rupaResetCancel').focus();};
+$('rupaResetCancel').onclick=()=>{$('rupaResetConfirm').classList.add('hidden');$('rupaReset').focus();};
+$('rupaResetYes').onclick=()=>{rupaState=newRupa();rupaFeedback=null;saveRupa();$('rupaResetConfirm').classList.add('hidden');renderRupa();focusRupa();};
+
 // Keep focus inside any open dialog and return it on Escape.
-document.addEventListener('keydown',e=>{const modal=[...document.querySelectorAll('.modal:not(.hidden)')].at(-1);if(!modal)return;const focusable=[...modal.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);if(e.key==='Tab'&&focusable.length){const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&(document.activeElement===first||!modal.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!modal.contains(document.activeElement))){e.preventDefault();first.focus();}}if(e.key==='Escape'){if(modal.id==='cetasikaReferenceModal')closeCetasikaReference();else if(modal.id==='rupaRevisionModal')$('closeRupa').click();else if(modal.id==='revisionModal')$('closeRevision').click();else if(modal.id==='resultModal')$('closeReview').click();}});
+document.addEventListener('keydown',e=>{const modal=[...document.querySelectorAll('.modal:not(.hidden)')].at(-1);if(!modal)return;const focusable=[...modal.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);if(e.key==='Tab'&&focusable.length){const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&(document.activeElement===first||!modal.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!modal.contains(document.activeElement))){e.preventDefault();first.focus();}}if(e.key==='Escape'){if(modal.id==='cetasikaReferenceModal')closeCetasikaReference();else if(modal.id==='rupaReferenceModal')closeRupaReference();else if(modal.id==='revisionModal')$('closeRevision').click();else if(modal.id==='resultModal')$('closeReview').click();}});
 updateLanguage();
 
 </script>
