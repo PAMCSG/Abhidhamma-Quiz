@@ -19,6 +19,8 @@
 .cetasika-reference-panel{width:min(1040px,100%)}.reference-heading{display:flex;justify-content:space-between;gap:16px;align-items:start}.reference-close{font:28px system-ui,sans-serif;line-height:1;border:1px solid #ccd8cb;border-radius:9px;background:#fff;color:var(--deep);width:40px;height:40px;flex:none}.reference-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.reference-tabs button{border:1px solid #bdcdbf;border-radius:9px;background:#fff;color:var(--deep);padding:10px 16px;font-weight:650}.reference-tabs button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.reference-scroll{padding-top:20px;padding-bottom:26px;overscroll-behavior:contain}.reference-scroll .study-table{table-layout:fixed}.reference-scroll .study-table th:first-child,.reference-scroll .study-table td:first-child{width:46px;color:var(--muted);font:13px system-ui,sans-serif}.reference-scroll .study-table td:nth-child(2){font:italic 19px 'Times New Roman',serif;color:#155CA8;overflow-wrap:anywhere}.reference-scroll .study-table td:nth-child(3),.reference-scroll .study-table td:nth-child(4){font:15px system-ui,sans-serif;color:var(--ink);overflow-wrap:anywhere}.reference-scroll .study-table th:nth-child(2){width:29%}.reference-scroll .study-table th:nth-child(3){width:37%}.reference-group{margin-bottom:30px}.reference-group h3{font:normal 25px Georgia,serif;margin:12px 0 5px;color:var(--deep)}.reference-parent{font-size:12px;letter-spacing:.4px;color:var(--muted);font-weight:650;margin:16px 0 8px}.reference-group .pali-title{margin-bottom:10px;font-size:20px}.reference-scroll .study-table-wrap{margin-top:12px}.reference-source{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px;margin-top:10px}@media(max-width:700px){.cetasika-reference-panel .resulthead{padding-top:18px;padding-bottom:16px}.cetasika-reference-panel .resulthead h2{font-size:27px}.reference-scroll{padding-left:12px;padding-right:12px}.reference-scroll .study-table{table-layout:auto;min-width:520px}.reference-scroll .study-table td:nth-child(2){font-size:18px}.reference-scroll .study-table td:nth-child(3),.reference-scroll .study-table td:nth-child(4){font-size:14px}.reference-group h3{font-size:22px}}
 
 #rupaRevision{margin-top:0}
+.reference-column-heading{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.speech-column-button{display:inline-grid;place-items:center;width:32px;height:32px;flex:none;border:1px solid #bbcebf;border-radius:8px;background:#fff;color:var(--green);padding:6px}.speech-column-button svg{width:19px;height:19px;display:block}.speech-column-button:hover,.speech-column-button[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}.speech-column-button:disabled{opacity:.45;cursor:not-allowed}.speech-controls{margin-top:15px;padding-top:12px;border-top:1px solid #d0ddd0}.speech-controls-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.speech-status{margin:0!important;color:var(--deep);font-size:13px;overflow-wrap:anywhere;min-height:20px}.speech-stop{border:1px solid #bdcdbf;background:#fff;color:var(--deep);border-radius:8px;padding:7px 12px;flex:none;font-size:13px;font-weight:650}.speech-stop:disabled{opacity:.45;cursor:not-allowed}.speech-preferences{font-size:12px;color:var(--muted);margin-top:9px}.speech-preferences summary{cursor:pointer;color:var(--green);font-weight:650}.speech-settings-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 100px;gap:10px;margin-top:12px}.speech-setting label{display:block;margin-bottom:5px;font-weight:650}.speech-setting select{width:100%;max-width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid #bdcdbf;border-radius:7px;padding:7px}.speech-voice-note{margin:8px 0 0!important;font-size:12px;color:var(--muted)}.reference-scroll .speech-cell.reference-speaking{background:#fff1c9!important;box-shadow:inset 3px 0 var(--gold)}@media(max-width:700px){.speech-settings-grid{grid-template-columns:1fr 1fr;max-height:175px;overflow:auto}.speech-status{font-size:12px}.speech-column-button{width:30px;height:30px}.reference-column-heading{gap:5px}.speech-controls{margin-top:12px;padding-top:9px}.speech-preferences{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -35,7 +37,7 @@
   </nav>
 </section>
 
-<div class="setup"><h2 data-i18n="begin">Begin a practice session</h2><p data-i18n="choose">Choose the number of questions. Each session draws a fresh selection from the question bank.</p><div class="section-controls"><div class="control"><label data-i18n="topicLabel">CHAPTER</label><div class="toggle"><button type="button" class="selected" data-topic="citta" aria-pressed="true">1 · Citta</button><button type="button" data-topic="cetasika" aria-pressed="false">2 · Cetasika</button></div></div><div class="control"><label data-i18n="levelLabel">LEVEL</label><div class="toggle"><button type="button" class="selected" data-level="basic" aria-pressed="true">Basic</button><button type="button" data-level="advanced" aria-pressed="false">Advanced</button></div></div></div><div class="controls"><div class="control"><label data-i18n="number">QUESTIONS PER SESSION</label><div class="toggle"><button type="button" class="selected" data-count="10" aria-pressed="true">10 Questions</button><button type="button" data-count="20" aria-pressed="false">20 Questions</button></div></div><div class="setup-actions"><button class="secondary" id="reviseBefore">📖 Revision notes</button><button class="primary" id="start">Start Quiz →</button></div></div><div class="note" data-i18n="note">Based on the standard Theravāda Abhidhammattha Saṅgaha classification. No account or internet connection is needed after the page loads.</div></div>
+<div class="setup"><h2 data-i18n="begin">Begin a practice session</h2><p data-i18n="choose">Choose the number of questions. Each session draws a fresh selection from the question bank.</p><div class="section-controls"><div class="control"><label data-i18n="topicLabel">CHAPTER</label><div class="toggle"><button type="button" class="selected" data-topic="citta" aria-pressed="true">1 · Citta</button><button type="button" data-topic="cetasika" aria-pressed="false">2 · Cetasika</button></div></div><div class="control"><label data-i18n="levelLabel">LEVEL</label><div class="toggle"><button type="button" class="selected" data-level="basic" aria-pressed="true">Basic</button><button type="button" data-level="advanced" aria-pressed="false">Advanced</button></div></div></div><div class="controls"><div class="control"><label data-i18n="number">QUESTIONS PER SESSION</label><div class="toggle"><button type="button" class="selected" data-count="10" aria-pressed="true">10 Questions</button><button type="button" data-count="20" aria-pressed="false">20 Questions</button></div></div><div class="setup-actions"><button class="secondary" id="reviseBefore">📖 Revision notes</button><button class="primary" id="start">Start Quiz →</button></div></div><div class="note" data-i18n="note">Based on the standard Theravāda Abhidhammattha Saṅgaha classification. Practice works offline after loading; some read-aloud voices require internet.</div></div>
 <div class="features"><div class="feature"><div>📖</div><b data-i18n="feature1">Core classifications</b><p data-i18n="feature1desc">Practice counts and categories of consciousness and mental factors.</p></div><div class="feature"><div>✓</div><b data-i18n="feature2">Instant results</b><p data-i18n="feature2desc">See your score once you complete all 10 or 20 questions.</p></div><div class="feature"><div>↻</div><b data-i18n="feature3">Learn from mistakes</b><p data-i18n="feature3desc">Review your answers alongside the correct answers and explanations.</p></div></div></section>
 <section id="quiz" class="quiz hidden" aria-live="polite"><div class="topline"><span id="progressText">QUESTION 1 OF 10</span><span id="answeredText">0 answered</span></div><div class="track"><div class="fill" id="progressBar"></div></div><div class="eyebrow" id="category">CITTA</div><h2 class="question" id="questionText"></h2><div class="choices" id="choices"></div><div class="quizfooter"><button class="secondary" id="previous">← Previous</button><span class="hint" data-i18n="select">Choose one answer</span><button class="primary" id="next" disabled>Next question →</button></div></section>
 <section id="cetasikaRevision" class="hidden" aria-labelledby="studyTitle">
@@ -70,7 +72,7 @@
 <div class="modal hidden" id="revisionModal" role="dialog" aria-modal="true" aria-labelledby="revisionTitle"><div class="panel"><div class="resulthead"><div class="eyebrow" id="revisionTag"></div><h2 id="revisionTitle">Revision notes</h2><p id="revisionIntro"></p></div><div class="review" id="revisionContent"></div><div class="resultactions"><button class="secondary" id="closeRevision">Close</button><button class="primary" id="revisionAction">Start Quiz →</button></div></div></div>
 <div class="modal hidden" id="cetasikaReferenceModal" role="dialog" aria-modal="true" aria-labelledby="cetasikaReferenceTitle">
   <div class="panel cetasika-reference-panel">
-    <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="referenceTag">CETASIKA REVISION</div><h2 id="cetasikaReferenceTitle" data-i18n="referenceTitle">Revise the mental factors</h2></div><button type="button" class="reference-close" id="closeCetasikaReference" aria-label="Close revision">×</button></div><p data-i18n="referenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="referenceThisGroup" aria-pressed="true" data-i18n="referenceThisGroup">This group</button><button type="button" id="referenceAllGroups" aria-pressed="false" data-i18n="referenceAllGroups">All 52 cetasikas</button></nav></div>
+    <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="referenceTag">CETASIKA REVISION</div><h2 id="cetasikaReferenceTitle" data-i18n="referenceTitle">Revise the mental factors</h2></div><button type="button" class="reference-close" id="closeCetasikaReference" aria-label="Close revision">×</button></div><p data-i18n="referenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="referenceThisGroup" aria-pressed="true" data-i18n="referenceThisGroup">This group</button><button type="button" id="referenceAllGroups" aria-pressed="false" data-i18n="referenceAllGroups">All 52 cetasikas</button></nav><div id="speech-controls-cetasika" class="speech-controls"></div></div>
     <div class="review reference-scroll" id="cetasikaReferenceContent"></div>
     <div class="resultactions"><button type="button" class="primary" id="returnFromCetasikaReference" data-i18n="referenceReturn">Return to practice</button></div>
   </div>
@@ -78,7 +80,7 @@
 
 <div class="modal hidden" id="rupaReferenceModal" role="dialog" aria-modal="true" aria-labelledby="rupaReferenceTitle">
   <div class="panel cetasika-reference-panel">
-    <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="rupaReferenceTag">RŪPA REVISION</div><h2 id="rupaReferenceTitle" data-i18n="rupaReferenceTitle">Revise the materiality chart</h2></div><button type="button" class="reference-close" id="closeRupaReference" aria-label="Close revision">×</button></div><p data-i18n="rupaReferenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="rupaReferenceThisGroup" aria-pressed="true" data-i18n="rupaReferenceThisGroup">This group</button><button type="button" id="rupaReferenceAllGroups" aria-pressed="false" data-i18n="rupaReferenceAllGroups">All 28 rūpas</button></nav></div>
+    <div class="resulthead"><div class="reference-heading"><div><div class="eyebrow" data-i18n="rupaReferenceTag">RŪPA REVISION</div><h2 id="rupaReferenceTitle" data-i18n="rupaReferenceTitle">Revise the materiality chart</h2></div><button type="button" class="reference-close" id="closeRupaReference" aria-label="Close revision">×</button></div><p data-i18n="rupaReferenceIntro">Read the table, then close this popup and recall the factors from memory.</p><nav class="reference-tabs" aria-label="Revision table"><button type="button" id="rupaReferenceThisGroup" aria-pressed="true" data-i18n="rupaReferenceThisGroup">This group</button><button type="button" id="rupaReferenceAllGroups" aria-pressed="false" data-i18n="rupaReferenceAllGroups">All 28 rūpas</button></nav><div id="speech-controls-rupa" class="speech-controls"></div></div>
     <div class="review reference-scroll" id="rupaReferenceContent"></div>
     <div class="resultactions"><button type="button" class="primary" id="returnFromRupaReference" data-i18n="rupaReferenceReturn">Return to practice</button></div>
   </div>
@@ -155,8 +157,8 @@ const chineseQuestions=[
 ['依基本分类，果心（phala-citta）共有多少种？','果心共有4种，对应四种出世间果证。']
 ];
 const translations={
-en:{eyebrow:'A mindful way to learn',hero:'Deepen your <em>Abhidhamma</em> knowledge.',intro:'Test your understanding of cittas, cetasikas and foundational classifications. Answer at your own pace, then review every answer with a short explanation.',begin:'Begin a practice session',choose:'Choose the number of questions. Each session draws a fresh selection from the question bank.',number:'QUESTIONS PER SESSION',start:'Start Quiz →',note:'Based on the standard Theravāda Abhidhammattha Saṅgaha classification. No account or internet connection is needed after the page loads.',feature1:'Core classifications',feature1desc:'Practice counts and categories of consciousness and mental factors.',feature2:'Instant results',feature2desc:'See your score once you complete all 10 or 20 questions.',feature3:'Learn from mistakes',feature3desc:'Review your answers alongside the correct answers and explanations.',select:'Choose one answer',footer:'Abhidhamma Quiz Practice · A study aid, not a replacement for guidance from a qualified teacher',complete:'Session complete',results:'Your results',back:'← Previous',next:'Next question →',finish:'Finish & see results →',retry:'Try another quiz ↻',close:'Back to start',correct:'✓ Correct',wrong:'✕ Incorrect',your:'Your answer:',answer:'Correct answer:',excellent:'Excellent — every answer is correct!',good:'Well done! Review the explanations to strengthen your understanding.',practice:'Keep practising. Use the answer review below to learn each classification.',question:'QUESTION',of:'OF',answered:'answered',counts:'Questions'},
-zh:{eyebrow:'以正念学习阿毗达摩',hero:'增进您的 <em>阿毗达摩</em> 知识',intro:'练习心、心所及其基本分类。您可以按自己的节奏作答，并在完成后查看正确答案和简要解释。',begin:'开始练习',choose:'选择题目数量。每次练习会从题库中随机抽取题目。',number:'每次练习题数',start:'开始答题 →',note:'依据南传上座部《阿毗达摩概要》的标准分类。网页载入后，无需注册或持续联网。',feature1:'基础分类',feature1desc:'练习各种心与心所的数目及分类。',feature2:'完成后显示成绩',feature2desc:'答完10或20题后查看得分。',feature3:'从错误中学习',feature3desc:'核对自己的答案、正确答案及解释。',select:'请选择一个答案',footer:'阿毗达摩测验 · 学习辅助工具，不能取代合格老师的指导',complete:'练习完成',results:'您的成绩',back:'← 上一题',next:'下一题 →',finish:'完成并查看成绩 →',retry:'再做一组题 ↻',close:'返回首页',correct:'✓ 正确',wrong:'✕ 错误',your:'您的答案：',answer:'正确答案：',excellent:'非常好！所有题目都回答正确。',good:'做得好！请阅读解释以巩固理解。',practice:'继续努力。请参考下方的正确答案及解释。',question:'第',of:'题，共',answered:'题已回答',counts:'题'}
+en:{eyebrow:'A mindful way to learn',hero:'Deepen your <em>Abhidhamma</em> knowledge.',intro:'Test your understanding of cittas, cetasikas and foundational classifications. Answer at your own pace, then review every answer with a short explanation.',begin:'Begin a practice session',choose:'Choose the number of questions. Each session draws a fresh selection from the question bank.',number:'QUESTIONS PER SESSION',start:'Start Quiz →',note:'Based on the standard Theravāda Abhidhammattha Saṅgaha classification. Practice works offline after loading; some read-aloud voices require internet.',feature1:'Core classifications',feature1desc:'Practice counts and categories of consciousness and mental factors.',feature2:'Instant results',feature2desc:'See your score once you complete all 10 or 20 questions.',feature3:'Learn from mistakes',feature3desc:'Review your answers alongside the correct answers and explanations.',select:'Choose one answer',footer:'Abhidhamma Quiz Practice · A study aid, not a replacement for guidance from a qualified teacher',complete:'Session complete',results:'Your results',back:'← Previous',next:'Next question →',finish:'Finish & see results →',retry:'Try another quiz ↻',close:'Back to start',correct:'✓ Correct',wrong:'✕ Incorrect',your:'Your answer:',answer:'Correct answer:',excellent:'Excellent — every answer is correct!',good:'Well done! Review the explanations to strengthen your understanding.',practice:'Keep practising. Use the answer review below to learn each classification.',question:'QUESTION',of:'OF',answered:'answered',counts:'Questions'},
+zh:{eyebrow:'以正念学习阿毗达摩',hero:'增进您的 <em>阿毗达摩</em> 知识',intro:'练习心、心所及其基本分类。您可以按自己的节奏作答，并在完成后查看正确答案和简要解释。',begin:'开始练习',choose:'选择题目数量。每次练习会从题库中随机抽取题目。',number:'每次练习题数',start:'开始答题 →',note:'依据南传上座部《阿毗达摩概要》的标准分类。网页载入后可离线练习，部分朗读语音需要联网。',feature1:'基础分类',feature1desc:'练习各种心与心所的数目及分类。',feature2:'完成后显示成绩',feature2desc:'答完10或20题后查看得分。',feature3:'从错误中学习',feature3desc:'核对自己的答案、正确答案及解释。',select:'请选择一个答案',footer:'阿毗达摩测验 · 学习辅助工具，不能取代合格老师的指导',complete:'练习完成',results:'您的成绩',back:'← 上一题',next:'下一题 →',finish:'完成并查看成绩 →',retry:'再做一组题 ↻',close:'返回首页',correct:'✓ 正确',wrong:'✕ 错误',your:'您的答案：',answer:'正确答案：',excellent:'非常好！所有题目都回答正确。',good:'做得好！请阅读解释以巩固理解。',practice:'继续努力。请参考下方的正确答案及解释。',question:'第',of:'题，共',answered:'题已回答',counts:'题'}
 };
 const chineseCategories={'Citta':'心','Cetasika':'心所','Akusala':'不善心','Ahetuka':'无因心','Lokuttara':'出世间心'};
 Object.assign(translations.en,{topicLabel:'CHAPTER',levelLabel:'LEVEL',basic:'Basic',advanced:'Advanced',revise:'📖 Revision notes',revisionTitle:'Revision notes',revisionIntro:'Study the key points from the attached Pa-Auk Meditation Centre course notes before or after your quiz.',closeRevision:'Close',reviewAnswers:'Return to answers',startFromRevision:'Start Quiz →'});
@@ -1131,12 +1133,12 @@ function rememberReferenceViewed(){
   saveStudy();
 }
 function referenceTable(factors){
-  const wrap=node('div','study-table-wrap'),table=node('table','study-table');
-  const head=node('thead'),tr=node('tr');
-  for(const label of ['#',t('paliLabel'),'English','中文']){const th=node('th','',label);th.setAttribute('scope','col');tr.append(th);}head.append(tr);table.append(head);
-  const body=node('tbody');for(const f of factors){const row=node('tr');row.append(node('td','',String(f.id)),node('td','',f.pali),node('td','',f.en),node('td','',f.zh));body.append(row);}table.append(body);wrap.append(table);return wrap;
+  const wrap=node('div','study-table-wrap'),table=node('table','study-table'),head=node('thead'),tr=node('tr'),number=node('th','','#');
+  number.setAttribute('scope','col');tr.append(number,referenceSpeechHeading('cetasika','pali',t('paliLabel')),referenceSpeechHeading('cetasika','en','English'),referenceSpeechHeading('cetasika','zh','中文'));head.append(tr);table.append(head);
+  const body=node('tbody');for(const f of factors){const row=node('tr');row.append(node('td','',String(f.id)),referenceSpeechCell('cetasika','pali',f),referenceSpeechCell('cetasika','en',f),referenceSpeechCell('cetasika','zh',f));body.append(row);}table.append(body);wrap.append(table);return wrap;
 }
 function renderCetasikaReference(){
+  stopReferenceSpeech('cetasika');
   $('cetasikaReferenceTitle').textContent=t('referenceTitle');
   $('closeCetasikaReference').setAttribute('aria-label',t('referenceClose'));
   $('referenceThisGroup').setAttribute('aria-pressed',String(!cetasikaReference.all));
@@ -1148,7 +1150,7 @@ function renderCetasikaReference(){
     previousParent=g.parent||null;
     section.append(node('h3','',`${g.count} ${g.en} · ${g.zh}`),node('p','pali-title',g.pali),referenceTable(groupFactors(key)));content.append(section);
   }
-  content.append(node('p','reference-source',t('referenceSource')));
+  content.append(node('p','reference-source',t('referenceSource')));renderSpeechControls('cetasika');
 }
 function showCetasikaReference(group){
   cetasikaReference={group,all:false};rememberReferenceViewed();renderCetasikaReference();
@@ -1156,6 +1158,7 @@ function showCetasikaReference(group){
   $('cetasikaReferenceModal').classList.remove('hidden');$('cetasikaReferenceContent').scrollTop=0;$('closeCetasikaReference').focus();
 }
 function closeCetasikaReference(){
+  stopReferenceSpeech('cetasika');
   $('cetasikaReferenceModal').classList.add('hidden');document.body.style.overflow=referencePreviousOverflow;
   ($('reviseStudyTable')||$('studyPali')||$('studyStageHeading')).focus({preventScroll:true});
 }
@@ -1356,12 +1359,12 @@ function rememberRupaReferenceViewed(){
   saveRupa();
 }
 function rupaReferenceTable(factors){
-  const wrap=rupaNode('div','study-table-wrap'),table=rupaNode('table','study-table');
-  const head=rupaNode('thead'),tr=rupaNode('tr');
-  for(const label of ['#',rt('paliLabel'),'English','中文']){const th=rupaNode('th','',label);th.setAttribute('scope','col');tr.append(th);}head.append(tr);table.append(head);
-  const body=rupaNode('tbody');for(const f of factors){const row=rupaNode('tr');row.append(rupaNode('td','',String(f.id)),rupaNode('td','',f.pali),rupaNode('td','',f.en),rupaNode('td','',f.zh));body.append(row);}table.append(body);wrap.append(table);return wrap;
+  const wrap=node('div','study-table-wrap'),table=node('table','study-table'),head=node('thead'),tr=node('tr'),number=node('th','','#');
+  number.setAttribute('scope','col');tr.append(number,referenceSpeechHeading('rupa','pali',t('paliLabel')),referenceSpeechHeading('rupa','en','English'),referenceSpeechHeading('rupa','zh','中文'));head.append(tr);table.append(head);
+  const body=node('tbody');for(const f of factors){const row=node('tr');row.append(node('td','',String(f.id)),referenceSpeechCell('rupa','pali',f),referenceSpeechCell('rupa','en',f),referenceSpeechCell('rupa','zh',f));body.append(row);}table.append(body);wrap.append(table);return wrap;
 }
 function renderRupaReference(){
+  stopReferenceSpeech('rupa');
   $('rupaReferenceTitle').textContent=rt('referenceTitle');
   $('closeRupaReference').setAttribute('aria-label',rt('referenceClose'));
   $('rupaReferenceThisGroup').setAttribute('aria-pressed',String(!rupaReference.all));
@@ -1373,7 +1376,7 @@ function renderRupaReference(){
     previousParent=g.parent||null;
     section.append(rupaNode('h3','',`${g.count} ${g.en} · ${g.zh}`),rupaNode('p','pali-title',g.pali),rupaReferenceTable(rupaGroupFactors(key)));if(['great','objective','mutable'].includes(key))section.append(rupaNode('p','study-hint',rt(key+'Note')));content.append(section);
   }
-  content.append(rupaNode('p','study-help',rt('overview')),rupaNode('p','reference-source',rt('referenceSource')));
+  content.append(rupaNode('p','study-help',rt('overview')),rupaNode('p','reference-source',rt('referenceSource')));renderSpeechControls('rupa');
 }
 function showRupaReference(group){
   rupaReference={group,all:false};rememberRupaReferenceViewed();renderRupaReference();
@@ -1381,6 +1384,7 @@ function showRupaReference(group){
   $('rupaReferenceModal').classList.remove('hidden');$('rupaReferenceContent').scrollTop=0;$('closeRupaReference').focus();
 }
 function closeRupaReference(){
+  stopReferenceSpeech('rupa');
   $('rupaReferenceModal').classList.add('hidden');document.body.style.overflow=rupaReferencePreviousOverflow;
   ($('reviseRupaTable')||$('rupaPali')||$('rupaStageHeading')).focus({preventScroll:true});
 }
@@ -1405,6 +1409,118 @@ $('rupaHome').onclick=closeRupaStudy;
 $('rupaReset').onclick=()=>{$('rupaResetConfirm').classList.remove('hidden');$('rupaResetCancel').focus();};
 $('rupaResetCancel').onclick=()=>{$('rupaResetConfirm').classList.add('hidden');$('rupaReset').focus();};
 $('rupaResetYes').onclick=()=>{rupaState=newRupa();rupaFeedback=null;saveRupa();$('rupaResetConfirm').classList.add('hidden');renderRupa();focusRupa();};
+
+// Browser/device voices require no account or server-side API key.
+Object.assign(translations.en,{speechReady:'Use a speaker icon to read just that column.',speechUnavailable:'Read-aloud is not available in this browser.',speechStop:'■ Stop',speechStopped:'Reading stopped.',speechDone:'Finished reading this column.',speechError:'Reading could not continue. Check the selected voice and try again.',speechMissingVoice:'No suitable voice is available for this column. Choose a voice in Read-aloud settings.',speechSettings:'Read-aloud settings',speechAutomatic:'Automatic',speechRate:'Speed',speechVoice:'voice',speechRead:'Read',speechColumn:'column',speechReadHint:'Read all displayed items in this language only',speechApproximate:'approximate pronunciation',speechPaliNote:'Pāli uses an available Pāli or Indic voice when possible. Other voices give approximate pronunciation; you can choose a different voice below.',speechSlow:'Slow',speechSteady:'Steady',speechNormal:'Normal',speechFast:'Faster'});
+Object.assign(translations.zh,{speechReady:'点击某一栏的喇叭图标，只朗读该栏。',speechUnavailable:'此浏览器暂不支持朗读。',speechStop:'■ 停止',speechStopped:'已停止朗读。',speechDone:'本栏已朗读完毕。',speechError:'朗读未能继续，请检查所选语音后重试。',speechMissingVoice:'此栏没有可用的合适语音，请在朗读设置中选择语音。',speechSettings:'朗读设置',speechAutomatic:'自动选择',speechRate:'语速',speechVoice:'语音',speechRead:'朗读',speechColumn:'栏',speechReadHint:'只朗读当前显示的这一语言的全部项目',speechApproximate:'近似发音',speechPaliNote:'巴利语优先使用可用的巴利语或印度语言语音。其他语音只能提供近似发音，您可在下方另选语音。',speechSlow:'慢',speechSteady:'稍慢',speechNormal:'正常',speechFast:'稍快'});
+const speechSpeakerSVG='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg>';
+const speechStopSVG='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
+const speechPreferenceKey='abhidhammaColumnSpeechV1';
+function readSpeechPreferences(){try{const raw=JSON.parse(readLocal(speechPreferenceKey))||{};return {pali:typeof raw.pali==='string'?raw.pali:'',en:typeof raw.en==='string'?raw.en:'',zh:typeof raw.zh==='string'?raw.zh:'',rate:[.65,.85,1,1.15].includes(raw.rate)?raw.rate:.85};}catch{return {pali:'',en:'',zh:'',rate:.85};}}
+let speechPreferences=readSpeechPreferences();
+const columnSpeech={run:0,active:false,owner:null,column:null,items:[],index:0,voice:null,utterance:null,timer:null,watchdog:null,message:'speechReady',approximate:false};
+function speechSupported(){return !!window.speechSynthesis&&typeof window.SpeechSynthesisUtterance==='function';}
+function availableSpeechVoices(){try{return speechSupported()?Array.from(window.speechSynthesis.getVoices()):[];}catch{return [];}}
+function speechVoiceKey(voice){return voice.voiceURI||`${voice.name}:${voice.lang}`;}
+function speechColumnName(column){return column==='pali'?(language==='zh'?'巴利语 Pāli':'Pāli'):column==='en'?(language==='zh'?'英文':'English'):(language==='zh'?'中文':'Chinese');}
+function speechOwnerModal(owner){return owner==='rupa'?'rupaReferenceModal':'cetasikaReferenceModal';}
+function speechVoiceCandidates(column,voices){if(column==='en')return voices.filter(v=>/^en(?:-|_|$)/i.test(v.lang));if(column==='zh')return voices.filter(v=>/^(zh|cmn)(?:-|_|$)/i.test(v.lang));return voices;}
+function chooseSpeechVoice(column,voices){
+  const candidates=speechVoiceCandidates(column,voices),chosen=candidates.find(v=>speechVoiceKey(v)===speechPreferences[column]);if(chosen)return chosen;
+  const find=pattern=>voices.find(v=>pattern.test(v.lang));
+  if(column==='zh')return find(/^zh[-_](CN|SG)$/i)||find(/^cmn/i)||candidates.find(v=>v.default)||candidates[0]||null;
+  if(column==='en')return candidates.find(v=>v.default)||find(/^en[-_](SG|GB|US)$/i)||candidates[0]||null;
+  return find(/^(pi|pli)(?:-|_|$)/i)||find(/^sa(?:-|_|$)/i)||find(/^hi(?:-|_|$)/i)||find(/^(mr|ne)(?:-|_|$)/i)||find(/^it(?:-|_|$)/i)||find(/^es(?:-|_|$)/i)||find(/^en(?:-|_|$)/i)||null;
+}
+// Render Roman Pāli in Devanāgarī for Sanskrit/Hindi/Marathi/Nepali voices.
+// Pronunciation still depends on the selected speech engine.
+function paliForIndicVoice(text){
+  const consonants={kh:'ख',gh:'घ',ch:'छ',jh:'झ','ṭh':'ठ','ḍh':'ढ',th:'थ',dh:'ध',ph:'फ',bh:'भ',k:'क',g:'ग','ṅ':'ङ',c:'च',j:'ज','ñ':'ञ','ṭ':'ट','ḍ':'ड','ṇ':'ण',t:'त',d:'द',n:'न',p:'प',b:'ब',m:'म',y:'य',r:'र',l:'ल','ḷ':'ळ',v:'व',s:'स',h:'ह'};
+  const independent={a:'अ','ā':'आ',i:'इ','ī':'ई',u:'उ','ū':'ऊ',e:'ए',o:'ओ'},dependent={a:'','ā':'ा',i:'ि','ī':'ी',u:'ु','ū':'ू',e:'े',o:'ो'};
+  const source=text.normalize('NFC').toLowerCase().replace(/\//g,', ').replace(/[-‐‑–]/g,' '),tokens=[];
+  for(let i=0;i<source.length;i++){const pair=source.slice(i,i+2);if(consonants[pair]){tokens.push(pair);i++;}else tokens.push(source[i]);}
+  let out='';for(let i=0;i<tokens.length;i++){const token=tokens[i];if(consonants[token]){out+=consonants[token];if(Object.hasOwn(dependent,tokens[i+1]))out+=dependent[tokens[++i]];else out+='्';}else if(independent[token])out+=independent[token];else if(token==='ṃ'||token==='ṁ')out+='ं';else out+=token;}return out;
+}
+function prepareColumnSpeechText(text,column,voice){
+  if(column==='pali'&&voice&&/^(sa|hi|mr|ne)(?:-|_|$)/i.test(voice.lang))return paliForIndicVoice(text);
+  return text.replace(/\//g,column==='zh'?'、':', ').trim();
+}
+function displayedSpeechFactors(owner){return owner==='rupa'?shownRupaReferenceKeys().flatMap(key=>rupaGroupFactors(key)):shownReferenceKeys().flatMap(key=>groupFactors(key));}
+function clearSpeechHighlight(){document.querySelectorAll('.speech-cell').forEach(cell=>cell.classList.remove('reference-speaking'));}
+function highlightSpeechItem(){
+  clearSpeechHighlight();if(!columnSpeech.active)return;
+  const item=columnSpeech.items[columnSpeech.index];if(!item)return;
+  document.querySelectorAll('.speech-cell').forEach(cell=>{if(cell.getAttribute('data-speech-owner')===columnSpeech.owner&&cell.getAttribute('data-speech-column')===columnSpeech.column&&cell.getAttribute('data-speech-id')===String(item.id)){cell.classList.add('reference-speaking');cell.scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});}});
+}
+function speechStatusText(owner){
+  if(!speechSupported())return t('speechUnavailable');
+  if(columnSpeech.owner!==owner)return t('speechReady');
+  if(!columnSpeech.active)return t(columnSpeech.message||'speechReady');
+  const item=columnSpeech.items[columnSpeech.index];
+  return `${speechColumnName(columnSpeech.column)} ${columnSpeech.index+1} / ${columnSpeech.items.length} · ${item?.[columnSpeech.column]||''}${columnSpeech.approximate?` · ${t('speechApproximate')}`:''}${columnSpeech.voice?` · ${columnSpeech.voice.name}`:''}`;
+}
+function updateColumnSpeechUI(){
+  for(const owner of ['cetasika','rupa']){
+    const status=$(`speech-status-${owner}`),stop=$(`speech-stop-${owner}`);if(status)status.textContent=speechStatusText(owner);if(stop){stop.textContent=t('speechStop');stop.disabled=!columnSpeech.active||columnSpeech.owner!==owner;}
+  }
+  document.querySelectorAll('.speech-column-button').forEach(button=>{
+    const owner=button.getAttribute('data-speech-owner'),column=button.getAttribute('data-speech-column'),playing=columnSpeech.active&&columnSpeech.owner===owner&&columnSpeech.column===column;
+    button.disabled=!speechSupported();button.setAttribute('aria-pressed',String(playing));button.setAttribute('aria-label',`${playing?t('speechStop'):t('speechRead')} ${speechColumnName(column)} ${t('speechColumn')}`);button.title=t('speechReadHint');button.innerHTML=playing?speechStopSVG:speechSpeakerSVG;
+  });
+}
+function stopColumnSpeech(message='speechStopped'){
+  columnSpeech.run++;columnSpeech.active=false;clearTimeout(columnSpeech.timer);clearTimeout(columnSpeech.watchdog);columnSpeech.timer=null;columnSpeech.watchdog=null;columnSpeech.utterance=null;columnSpeech.message=message;
+  if(speechSupported()){try{window.speechSynthesis.cancel();}catch{}}
+  clearSpeechHighlight();updateColumnSpeechUI();
+}
+function stopReferenceSpeech(owner){if(columnSpeech.owner===owner)stopColumnSpeech('speechReady');}
+function readNextColumnItem(run){
+  if(run!==columnSpeech.run||!columnSpeech.active)return;
+  if(columnSpeech.index>=columnSpeech.items.length){columnSpeech.active=false;columnSpeech.utterance=null;columnSpeech.message='speechDone';clearSpeechHighlight();updateColumnSpeechUI();return;}
+  if($(speechOwnerModal(columnSpeech.owner)).classList.contains('hidden')){stopColumnSpeech('speechReady');return;}
+  const item=columnSpeech.items[columnSpeech.index],utterance=new window.SpeechSynthesisUtterance(prepareColumnSpeechText(item[columnSpeech.column],columnSpeech.column,columnSpeech.voice));
+  utterance.lang=columnSpeech.voice?.lang||(columnSpeech.column==='zh'?'zh-CN':'en-GB');if(columnSpeech.voice)utterance.voice=columnSpeech.voice;utterance.rate=speechPreferences.rate;utterance.volume=1;
+  utterance.onstart=()=>{if(run===columnSpeech.run&&columnSpeech.active){highlightSpeechItem();updateColumnSpeechUI();}};
+  utterance.onend=()=>{if(run!==columnSpeech.run||!columnSpeech.active)return;clearTimeout(columnSpeech.watchdog);columnSpeech.utterance=null;columnSpeech.index++;columnSpeech.timer=setTimeout(()=>readNextColumnItem(run),300);};
+  utterance.onerror=()=>{if(run===columnSpeech.run&&columnSpeech.active)stopColumnSpeech('speechError');};
+  columnSpeech.utterance=utterance;columnSpeech.watchdog=setTimeout(()=>{if(run===columnSpeech.run&&columnSpeech.active)stopColumnSpeech('speechError');},30000);
+  highlightSpeechItem();updateColumnSpeechUI();
+  try{window.speechSynthesis.speak(utterance);}catch{stopColumnSpeech('speechError');}
+}
+function readReferenceColumn(owner,column){
+  if(!['pali','en','zh'].includes(column))return;
+  if(columnSpeech.active&&columnSpeech.owner===owner&&columnSpeech.column===column){stopColumnSpeech();return;}
+  stopColumnSpeech('speechReady');columnSpeech.owner=owner;columnSpeech.column=column;
+  if(!speechSupported()){columnSpeech.message='speechUnavailable';updateColumnSpeechUI();return;}
+  const voices=availableSpeechVoices(),voice=chooseSpeechVoice(column,voices);
+  if(voices.length&&!voice){columnSpeech.message='speechMissingVoice';updateColumnSpeechUI();return;}
+  columnSpeech.items=displayedSpeechFactors(owner);columnSpeech.index=0;columnSpeech.voice=voice;columnSpeech.active=true;columnSpeech.approximate=column==='pali'&&!/^(pi|pli)(?:-|_|$)/i.test(voice?.lang||'');
+  if(!columnSpeech.items.length){stopColumnSpeech('speechDone');return;}
+  readNextColumnItem(columnSpeech.run);
+}
+function referenceSpeechHeading(owner,column,label){
+  const th=node('th'),wrap=node('span','reference-column-heading'),button=node('button','speech-column-button');th.setAttribute('scope','col');button.type='button';button.setAttribute('data-speech-owner',owner);button.setAttribute('data-speech-column',column);button.setAttribute('aria-pressed','false');button.setAttribute('aria-label',`${t('speechRead')} ${speechColumnName(column)} ${t('speechColumn')}`);button.title=t('speechReadHint');button.disabled=!speechSupported();button.innerHTML=speechSpeakerSVG;button.onclick=()=>readReferenceColumn(owner,column);wrap.append(node('span','',label),button);th.append(wrap);return th;
+}
+function referenceSpeechCell(owner,column,factor){const cell=node('td','speech-cell',factor[column]);cell.setAttribute('data-speech-owner',owner);cell.setAttribute('data-speech-column',column);cell.setAttribute('data-speech-id',String(factor.id));return cell;}
+function renderSpeechControls(owner){
+  const host=$(`speech-controls-${owner}`);if(!host)return;
+  const preferencesOpen=host.querySelectorAll('details')[0]?.open||false;host.replaceChildren();
+  const row=node('div','speech-controls-row'),status=node('p','speech-status'),stop=node('button','speech-stop',t('speechStop'));status.id=`speech-status-${owner}`;status.setAttribute('role','status');status.setAttribute('aria-live','polite');stop.id=`speech-stop-${owner}`;stop.type='button';stop.onclick=()=>stopColumnSpeech();row.append(status,stop);host.append(row);
+  const details=node('details','speech-preferences');details.open=preferencesOpen;details.append(node('summary','',t('speechSettings')),node('p','speech-voice-note',t('speechPaliNote')));
+  const grid=node('div','speech-settings-grid'),voices=availableSpeechVoices();
+  for(const column of ['pali','en','zh']){
+    const setting=node('div','speech-setting'),label=node('label','',`${speechColumnName(column)} ${t('speechVoice')}`),select=node('select');select.id=`speech-voice-${owner}-${column}`;label.htmlFor=select.id;const automatic=node('option','',t('speechAutomatic'));automatic.value='';select.append(automatic);
+    for(const voice of speechVoiceCandidates(column,voices)){const option=node('option','',`${voice.name} (${voice.lang})`);option.value=speechVoiceKey(voice);select.append(option);}select.value=speechPreferences[column];if(![...select.children].some(option=>option.value===select.value))select.value='';
+    select.disabled=!speechSupported();select.onchange=()=>{speechPreferences[column]=select.value;writeLocal(speechPreferenceKey,JSON.stringify(speechPreferences));stopColumnSpeech('speechReady');};setting.append(label,select);grid.append(setting);
+  }
+  const speed=node('div','speech-setting'),label=node('label','',t('speechRate')),select=node('select');select.id=`speech-rate-${owner}`;label.htmlFor=select.id;for(const [value,key] of [[.65,'speechSlow'],[.85,'speechSteady'],[1,'speechNormal'],[1.15,'speechFast']]){const option=node('option','',`${t(key)} (${value}×)`);option.value=String(value);select.append(option);}select.value=String(speechPreferences.rate);select.onchange=()=>{speechPreferences.rate=Number(select.value);writeLocal(speechPreferenceKey,JSON.stringify(speechPreferences));stopColumnSpeech('speechReady');};speed.append(label,select);grid.append(speed);details.append(grid);host.append(details);updateColumnSpeechUI();
+}
+if(speechSupported()){
+  const refresh=()=>{for(const owner of ['cetasika','rupa'])if(!$(speechOwnerModal(owner)).classList.contains('hidden'))renderSpeechControls(owner);};
+  if(window.speechSynthesis.addEventListener)window.speechSynthesis.addEventListener('voiceschanged',refresh);
+  availableSpeechVoices();
+}
+if(window.addEventListener)window.addEventListener('pagehide',()=>stopColumnSpeech('speechReady'));
 
 // Keep focus inside any open dialog and return it on Escape.
 document.addEventListener('keydown',e=>{const modal=[...document.querySelectorAll('.modal:not(.hidden)')].at(-1);if(!modal)return;const focusable=[...modal.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);if(e.key==='Tab'&&focusable.length){const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&(document.activeElement===first||!modal.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!modal.contains(document.activeElement))){e.preventDefault();first.focus();}}if(e.key==='Escape'){if(modal.id==='cetasikaReferenceModal')closeCetasikaReference();else if(modal.id==='rupaReferenceModal')closeRupaReference();else if(modal.id==='revisionModal')$('closeRevision').click();else if(modal.id==='resultModal')$('closeReview').click();}});
